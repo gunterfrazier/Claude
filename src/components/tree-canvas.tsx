@@ -1,8 +1,9 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Pressable, StyleSheet, Text, View, type LayoutChangeEvent } from "react-native";
+import { PixelRatio, Pressable, StyleSheet, Text, View, type LayoutChangeEvent } from "react-native";
 import { GestureDetector, usePanGesture, usePinchGesture, useSimultaneousGestures } from "react-native-gesture-handler";
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
+import Animated, { useAnimatedReaction, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 import Svg, { Circle, Defs, Line, Path, Pattern, Rect, Text as SvgText } from "react-native-svg";
+import { scheduleOnRN } from "react-native-worklets";
 
 import type { Figure } from "@/data/types";
 import { getFigure, parentLink } from "@/lib/graph";
@@ -11,6 +12,44 @@ import { colors, fonts, shadow } from "@/theme";
 
 const MIN_SCALE = 0.3;
 const MAX_SCALE = 2;
+
+/*
+ * The connecting lines are drawn into a bitmap (react-native-svg renders a whole <Svg> into one
+ * bitmap on Android), so they can't be drawn at the size of a large tree: a full lineage is
+ * thousands of points across, and Android refuses to draw a bitmap over 100 MB, which crashes
+ * the app. Instead the lines are drawn only for a window around the visible area, at the current
+ * zoom, and redrawn when panning or zooming leaves that window.
+ */
+/** How far the drawn window extends beyond each side of the visible area, as a fraction of it. */
+const EDGE_WINDOW_MARGIN = 0.35;
+/** Redraw the lines when zooming in past this factor of the zoom they were drawn at. */
+const EDGE_WINDOW_MAX_UPSCALE = 1.3;
+/** Most memory the line bitmap may use; past it the lines are drawn at a lower resolution. */
+const EDGE_BITMAP_BUDGET = 32 * 1024 * 1024;
+/** Room around an edge's end points for its arrowhead, label and ∞ medallion. */
+const EDGE_BOX_PAD = 60;
+
+interface Box {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+/** Part of the canvas to draw lines for, and the zoom (canvas units to points) to draw them at. */
+interface EdgeWindow extends Box {
+  res: number;
+}
+
+function boxAround(xs: number[], ys: number[]): Box {
+  const x = Math.min(...xs) - EDGE_BOX_PAD;
+  const y = Math.min(...ys) - EDGE_BOX_PAD;
+  return { x, y, w: Math.max(...xs) + EDGE_BOX_PAD - x, h: Math.max(...ys) + EDGE_BOX_PAD - y };
+}
+
+function overlaps(a: Box, b: Box): boolean {
+  return a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+}
 
 interface TreeCanvasProps {
   layout: TreeLayout;
@@ -36,6 +75,8 @@ interface EdgeShape {
   dash?: string;
   /** Small label at the middle of the curve, e.g. "19 gen." */
   label?: { x: number; y: number; text: string };
+  /** Area the edge is drawn within, in canvas coordinates. */
+  box: Box;
 }
 
 function buildEdges(
@@ -54,6 +95,8 @@ function buildEdges(
     return `M ${a.cx} ${y1} C ${a.cx} ${midY}, ${b.cx} ${midY}, ${b.cx} ${y2}`;
   };
   const arrowAt = (b: NodePosition) => `M ${b.cx - 4.5} ${b.y - 9} L ${b.cx + 4.5} ${b.y - 9} L ${b.cx} ${b.y - 2} Z`;
+  // A curve stays within the box of its end points (its control points share their x and y values).
+  const curveBox = (a: NodePosition, b: NodePosition) => boxAround([a.cx, b.cx], [a.y + dims.nodeH, b.y]);
 
   // Contemporaries / associates (only around the focus or selected figure, to keep the tree readable)
   const drawnAssoc = new Set<string>();
@@ -75,6 +118,7 @@ function buildEdges(
         width: 2,
         opacity: 0.75,
         arrow: arrowAt(b),
+        box: curveBox(a, b),
       });
     }
   }
@@ -99,6 +143,7 @@ function buildEdges(
         stroke: colors.amber600,
         width: 2.2,
         opacity: 1,
+        box: boxAround([x1, x2], [a.cy]),
       });
     }
   }
@@ -132,6 +177,7 @@ function buildEdges(
         // Links that rest on tradition are drawn fainter.
         opacity: (hasHighlight && !onPath ? 0.35 : 0.9) * (link?.tradition ? 0.55 : 1),
         arrow: arrowAt(b),
+        box: curveBox(a, b),
       });
     }
   }
@@ -236,6 +282,60 @@ export function TreeCanvas({
   const edges = useMemo(() => buildEdges(layout, focusId, selectedId, highlighted), [layout, focusId, selectedId, highlighted]);
   const focus = getFigure(focusId);
 
+  // Track the visible area on the UI thread and move the line window when it leaves it.
+  const [edgeWindow, setEdgeWindow] = useState<EdgeWindow | null>(null);
+  const drawnWindow = useSharedValue<EdgeWindow | null>(null);
+  const { width: viewW, height: viewH } = viewport;
+  useAnimatedReaction(
+    () => ({ x: tx.get(), y: ty.get(), s: scale.get() }),
+    ({ x, y, s }) => {
+      if (viewW === 0 || viewH === 0) return;
+      const left = -x / s;
+      const top = -y / s;
+      const w = viewW / s;
+      const h = viewH / s;
+      const win = drawnWindow.get();
+      if (
+        win &&
+        left >= win.x &&
+        top >= win.y &&
+        left + w <= win.x + win.w &&
+        top + h <= win.y + win.h &&
+        s <= win.res * EDGE_WINDOW_MAX_UPSCALE
+      ) {
+        return;
+      }
+      const next: EdgeWindow = {
+        x: left - w * EDGE_WINDOW_MARGIN,
+        y: top - h * EDGE_WINDOW_MARGIN,
+        w: w * (1 + 2 * EDGE_WINDOW_MARGIN),
+        h: h * (1 + 2 * EDGE_WINDOW_MARGIN),
+        res: s,
+      };
+      drawnWindow.set(next);
+      scheduleOnRN(setEdgeWindow, next);
+    },
+    [viewW, viewH],
+  );
+
+  const edgeLayer = useMemo(() => {
+    if (!edgeWindow) return null;
+    // Only the part of the window the tree covers.
+    const x = Math.max(0, edgeWindow.x);
+    const y = Math.max(0, edgeWindow.y);
+    const w = Math.min(layout.width, edgeWindow.x + edgeWindow.w) - x;
+    const h = Math.min(layout.height, edgeWindow.y + edgeWindow.h) - y;
+    if (w <= 0 || h <= 0) return null;
+    const density = PixelRatio.get();
+    const bytes = w * edgeWindow.res * density * (h * edgeWindow.res * density) * 4;
+    const res = edgeWindow.res * Math.min(1, Math.sqrt(EDGE_BITMAP_BUDGET / bytes));
+    // Whole points, since <Svg> rounds its size; the scale below stretches them back to w × h.
+    const drawW = Math.max(1, Math.round(w * res));
+    const drawH = Math.max(1, Math.round(h * res));
+    const box = { x, y, w, h };
+    return { ...box, drawW, drawH, edges: edges.filter((e) => overlaps(e.box, box)) };
+  }, [edgeWindow, edges, layout.width, layout.height]);
+
   return (
     <View style={styles.viewport} onLayout={onLayout}>
       <GestureDetector gesture={gesture}>
@@ -253,11 +353,33 @@ export function TreeCanvas({
           <Pressable style={StyleSheet.absoluteFill} onPress={() => onSelect(null)} accessible={false} />
 
           <Animated.View style={[styles.canvas, { width: layout.width, height: layout.height }, animatedStyle]}>
-            <Svg width={layout.width} height={layout.height} style={StyleSheet.absoluteFill} pointerEvents="none">
-              {edges.map((e) =>
-                e.kind === "spouse" && e.line ? <SpouseConnector key={e.key} {...e.line} /> : <EdgePath key={e.key} edge={e} />,
-              )}
-            </Svg>
+            {edgeLayer ? (
+              // Drawn at the current zoom and scaled to canvas units, so the bitmap is about the
+              // size of the screen whatever the size of the tree.
+              <View
+                pointerEvents="none"
+                style={{
+                  position: "absolute",
+                  left: edgeLayer.x,
+                  top: edgeLayer.y,
+                  width: edgeLayer.drawW,
+                  height: edgeLayer.drawH,
+                  transformOrigin: "left top",
+                  transform: [{ scaleX: edgeLayer.w / edgeLayer.drawW }, { scaleY: edgeLayer.h / edgeLayer.drawH }],
+                }}
+              >
+                <Svg
+                  width={edgeLayer.drawW}
+                  height={edgeLayer.drawH}
+                  viewBox={`${edgeLayer.x} ${edgeLayer.y} ${edgeLayer.w} ${edgeLayer.h}`}
+                  preserveAspectRatio="none"
+                >
+                  {edgeLayer.edges.map((e) =>
+                    e.kind === "spouse" && e.line ? <SpouseConnector key={e.key} {...e.line} /> : <EdgePath key={e.key} edge={e} />,
+                  )}
+                </Svg>
+              </View>
+            ) : null}
             {[...layout.positions.values()].map((pos) => {
               const figure = getFigure(pos.id);
               if (!figure) return null;
