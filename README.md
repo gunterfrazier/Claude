@@ -1,8 +1,27 @@
-# Claude mobile app
+# BibliaTree (mobile)
 
-A cross-platform (iOS + Android) mobile app built with [Expo](https://expo.dev) (SDK 58),
-React Native and TypeScript. Navigation uses [Expo Router](https://docs.expo.dev/router/introduction/):
-every file in `src/app/` is a screen.
+An interactive Biblical genealogy and scripture explorer for iOS and Android, built with
+[Expo](https://expo.dev) (SDK 58), React Native and TypeScript. It is the mobile version of the
+BibliaTree web prototype kept in [`reference/bibliatree-web.html`](reference/bibliatree-web.html),
+and uses the same 212 figures.
+
+## Features
+
+- **Interactive family tree.** Pinch to zoom and drag to pan. Tap a card to inspect it;
+  long-press it to rebuild the tree around that person. Choose ±2, ±3 or ±5 generations or the
+  full connected lineage, show or hide spouses and siblings, and jump to featured figures
+  (Adam, Noah, Abraham, Jacob, Moses, Ruth, David, Solomon, Jesus) or to figures with no recorded
+  genealogy (Melchizedek, Elijah, Job, Daniel, Esther, Paul, Mary Magdalene).
+- **Trace the line from Adam.** Highlights the genealogical chain from Adam to any figure.
+- **Lineage Pathfinder.** Finds the connection between any two figures, with every step,
+  the relationship and a key verse, and can highlight the chain on the tree.
+- **Figures & scripture concordance.** Search every name, meaning, tribe, biography and verse,
+  and filter by era, by the Messianic line, or by figures with no recorded genealogy.
+- **Dossiers.** Biography, name meaning, lifespan, immediate family (tap to navigate),
+  contemporaries, every scripture passage, key facts, and the line from Adam.
+- **Save, share and print.** Export a dossier as PDF, Word (.doc), HTML, Markdown, plain text,
+  CSV, SVG tree chart or JSON, then share it through the system share sheet, print it, or copy
+  the text.
 
 ## Run it on your phone
 
@@ -22,18 +41,48 @@ Other targets: `npm run android` (Android emulator), `npm run ios` (iOS simulato
 ## Project layout
 
 ```
-src/app/        Screens and layouts (file-based routes)
-assets/images/  App icon, splash screen and adaptive Android icons
-app.json        App name, icons, splash screen and native config
+src/app/                 Screens (file-based routes, Expo Router)
+  (tabs)/index.tsx       Family tree
+  (tabs)/pathfinder.tsx  Lineage pathfinder
+  (tabs)/figures.tsx     Figures & scripture concordance
+  person/[id].tsx        Dossier for one figure
+  export/[id].tsx        Save / share / print
+src/components/          Tree canvas, person picker, shared UI and icons
+src/lib/graph.ts         Genealogy graph, tree subgraph and path finding
+src/lib/tree-layout.ts   Generation-row layout for the tree and the exported SVG
+src/lib/export.ts        PDF/HTML, Word, Markdown, text, CSV, SVG and JSON generators
+src/data/figures.ts      The 212 figures (generated, see below)
+reference/               The original web prototype
 ```
 
-Keep non-screen code (components, hooks, utilities) in `src/` outside `src/app/`.
+## Updating the figures
+
+`src/data/figures.ts` is generated from the web prototype so the two stay in sync. Edit the
+`INITIAL_BIBLE_FIGURES` array in `reference/bibliatree-web.html`, then run:
+
+```bash
+npm run data:extract
+```
+
+The script reports duplicate ids and relatives that point to a figure that doesn't exist.
+Currently that is one reference, `theophilus` among Luke's associates, which the app skips.
+
+## Differences from the web prototype
+
+- **Pathfinder and "trace from Adam".** These prefer bloodline steps over marriages and the
+  Messianic line over side branches. With plain breadth-first search (as in the prototype),
+  compressed links in the data made Abraham → David run through Saul's daughter Michal, and
+  Adam → Jesus through Lot and Moab. They now follow the royal line through Judah.
+- **Tree layout.** Places each person beneath their parents and keeps the focus person directly
+  under theirs, so lines stay short on a small screen.
+- **Exports.** PDF replaces the PNG poster: phones print and share PDFs natively, and the SVG
+  export still gives a scalable image of the tree.
 
 ## Checks
 
 ```bash
 npm run typecheck   # TypeScript
-npm run lint        # ESLint (sets itself up on first run)
+npm run lint        # ESLint
 ```
 
 ## Adding packages
@@ -43,4 +92,5 @@ Use `npx expo install <package>` rather than `npm install` so you get versions c
 ## Building for the app stores
 
 Use [EAS Build](https://docs.expo.dev/build/introduction/): `npx eas-cli@latest build --platform all`.
-You need a free Expo account; App Store builds also need an Apple Developer account.
+You need a free Expo account; App Store builds also need an Apple Developer account. Set
+`ios.bundleIdentifier` and `android.package` in `app.json` before the first store build.
