@@ -1,10 +1,9 @@
 import { FIGURES } from "@/data/figures";
-import type { Figure } from "@/data/types";
+import type { Figure, ParentLink } from "@/data/types";
 
 /**
- * The genealogy graph. Relationship lists in the source data are one-sided in places
- * (a parent may list a child the child does not list back), so links are made
- * bidirectional once at startup, exactly like the web prototype's rebuildGraphLinks().
+ * The genealogy graph. Relationship lists are made symmetric once at startup so every
+ * lookup can rely on both sides (parent ↔ child, spouse ↔ spouse, sibling ↔ sibling).
  */
 function buildGraph(source: Figure[]): { list: Figure[]; map: Map<string, Figure> } {
   const list: Figure[] = source.map((f) => ({
@@ -12,27 +11,21 @@ function buildGraph(source: Figure[]): { list: Figure[]; map: Map<string, Figure
     parents: [...f.parents],
     spouses: [...f.spouses],
     children: [...f.children],
+    siblings: [...(f.siblings ?? [])],
     associates: [...(f.associates ?? [])],
   }));
   const map = new Map(list.map((f) => [f.id, f]));
+  const link = (from: Figure, key: "children" | "parents" | "spouses" | "siblings" | "associates", id: string) => {
+    const list = from[key];
+    if (list && !list.includes(id)) list.push(id);
+  };
 
   for (const person of list) {
-    for (const parentId of person.parents) {
-      const parent = map.get(parentId);
-      if (parent && !parent.children.includes(person.id)) parent.children.push(person.id);
-    }
-    for (const childId of person.children) {
-      const child = map.get(childId);
-      if (child && !child.parents.includes(person.id)) child.parents.push(person.id);
-    }
-    for (const spouseId of person.spouses) {
-      const spouse = map.get(spouseId);
-      if (spouse && !spouse.spouses.includes(person.id)) spouse.spouses.push(person.id);
-    }
-    for (const assocId of person.associates ?? []) {
-      const assoc = map.get(assocId);
-      if (assoc && !assoc.associates?.includes(person.id)) assoc.associates?.push(person.id);
-    }
+    for (const id of person.parents) map.get(id) && link(map.get(id)!, "children", person.id);
+    for (const id of person.children) map.get(id) && link(map.get(id)!, "parents", person.id);
+    for (const id of person.spouses) map.get(id) && link(map.get(id)!, "spouses", person.id);
+    for (const id of person.siblings ?? []) map.get(id) && link(map.get(id)!, "siblings", person.id);
+    for (const id of person.associates ?? []) map.get(id) && link(map.get(id)!, "associates", person.id);
   }
   return { list, map };
 }
@@ -55,36 +48,128 @@ export function hasFigure(id: string): boolean {
   return graph.map.has(id);
 }
 
-/** Resolves ids to figures, silently skipping ids with no record (e.g. "theophilus"). */
+/** Resolves ids to figures, silently skipping ids with no record. */
 export function resolveFigures(ids: readonly string[] | undefined): Figure[] {
   return (ids ?? []).map((id) => graph.map.get(id)).filter((f): f is Figure => Boolean(f));
 }
 
+/** Details of the link from a parent to a child (undefined = a plain, direct parent). */
+export function parentLink(childId: string, parentId: string): ParentLink | undefined {
+  return graph.map.get(childId)?.parentLinks?.[parentId];
+}
+
+/** Siblings through a shared parent, plus siblings recorded directly. */
 export function getSiblings(personId: string): string[] {
   const person = graph.map.get(personId);
-  if (!person || person.parents.length === 0) return [];
-  const siblings = new Set<string>();
+  if (!person) return [];
+  const siblings = new Set<string>(person.siblings ?? []);
   for (const parentId of person.parents) {
+    // A tribal or national ancestor doesn't make everyone descended from them siblings.
+    if (person.parentLinks?.[parentId]?.kind === "descendant") continue;
     for (const childId of graph.map.get(parentId)?.children ?? []) {
-      if (childId !== personId) siblings.add(childId);
+      if (childId !== personId && graph.map.get(childId)?.parentLinks?.[parentId]?.kind !== "descendant") siblings.add(childId);
     }
   }
   return [...siblings];
 }
 
+export type RelationStep = "parent" | "child" | "spouse" | "sibling" | "relative";
+
+export function relationBetween(fromId: string, toId: string): RelationStep {
+  const from = graph.map.get(fromId);
+  if (!from) return "relative";
+  if (from.children.includes(toId)) return "parent";
+  if (from.parents.includes(toId)) return "child";
+  if (from.spouses.includes(toId)) return "spouse";
+  if (from.siblings?.includes(toId) || getSiblings(fromId).includes(toId)) return "sibling";
+  return "relative";
+}
+
+/** Generations a parent→child link spans, and whether that number is a lower bound. */
+function linkGenerations(link: ParentLink | undefined): { generations: number; exact: boolean } {
+  if (link?.kind !== "descendant") return { generations: 1, exact: true };
+  return link.generations ? { generations: link.generations, exact: true } : { generations: 1, exact: false };
+}
+
+/** The link between two adjacent people on a path, whichever direction it points. */
+export function stepLink(fromId: string, toId: string): ParentLink | undefined {
+  const rel = relationBetween(fromId, toId);
+  if (rel === "parent") return parentLink(toId, fromId);
+  if (rel === "child") return parentLink(fromId, toId);
+  return undefined;
+}
+
+export function describeRelationshipStep(fromId: string, toId: string): string {
+  const rel = relationBetween(fromId, toId);
+  const link = stepLink(fromId, toId);
+  const span =
+    link?.kind === "descendant" ? (link.generations ? ` · ${link.generations} generations` : " · generations unrecorded") : "";
+  switch (rel) {
+    case "parent":
+      return link?.kind === "descendant" ? `Ancestor of ↓${span}` : link?.kind === "legal" ? "Legal parent of ↓" : "Parent of ↓";
+    case "child":
+      return link?.kind === "descendant" ? `Descendant of ↑${span}` : link?.kind === "legal" ? "Legal child of ↑" : "Child of ↑";
+    case "spouse":
+      return "Spouse of ∞";
+    case "sibling":
+      return "Sibling of ↔";
+    default:
+      return "Relative of";
+  }
+}
+
+export interface PathSummary {
+  /** People-to-people links on the path. */
+  links: number;
+  /** Generations crossed by parent/child links (marriages and siblings add none). */
+  generations: number;
+  /** True when a link has unrecorded generations, so `generations` is a minimum. */
+  atLeast: boolean;
+  /** True when a link rests on tradition rather than an explicit statement. */
+  traditional: boolean;
+  /** True when every link runs the same way (a straight line of ancestry), so `generations` is a real distance. */
+  direct: boolean;
+}
+
+export function summarizePath(path: readonly string[]): PathSummary {
+  let generations = 0;
+  let atLeast = false;
+  let traditional = false;
+  const directions = new Set<string>();
+  for (let i = 0; i + 1 < path.length; i++) {
+    const rel = relationBetween(path[i], path[i + 1]);
+    directions.add(rel);
+    if (rel !== "parent" && rel !== "child") continue;
+    const link = stepLink(path[i], path[i + 1]);
+    const span = linkGenerations(link);
+    generations += span.generations;
+    if (!span.exact) atLeast = true;
+    if (link?.tradition) traditional = true;
+  }
+  const direct = directions.size === 1 && (directions.has("parent") || directions.has("child"));
+  return { links: Math.max(0, path.length - 1), generations, atLeast, traditional, direct };
+}
+
+export function formatGenerations(summary: PathSummary): string {
+  const n = `${summary.atLeast ? "at least " : ""}${summary.generations}`;
+  return `${n} ${summary.generations === 1 && !summary.atLeast ? "generation" : "generations"}`;
+}
+
 const SPOUSE_STEP_COST = 3;
+const SIBLING_STEP_COST = 2;
+const UNRECORDED_GENERATIONS_COST = 3;
+const TRADITION_COST = 1;
 const OFF_MESSIANIC_LINE_COST = 3;
 
 /**
- * Lowest-cost genealogical chain over child, parent and spouse links.
+ * Lowest-cost genealogical chain over parent, child, spouse and sibling links.
  *
- * Bloodline steps are preferred over marriages, and steps onto the Messianic line over
- * side branches, so that compressed links in the data (e.g. Moab → Ruth, Benjamin → Kish)
- * don't produce chains like Abraham → Saul → Michal → David instead of the royal line
- * through Judah. Among people off the Messianic line every step costs the same, so those
- * paths are still the shortest by generation count.
+ * A parent link costs the generations it spans (so Luke's compressed lists count fully), and
+ * bloodline steps are preferred over marriages, recorded links over traditional ones, and the
+ * Messianic line over side branches. Among people off the Messianic line every direct step
+ * costs the same, so those paths are still the shortest by generation count.
  */
-export function findShortestPath(startId: string, endId: string): string[] | null {
+export function findShortestPath(startId: string, endId: string, options: { descentOnly?: boolean } = {}): string[] | null {
   if (!graph.map.has(startId) || !graph.map.has(endId)) return null;
   if (startId === endId) return [startId];
 
@@ -108,16 +193,22 @@ export function findShortestPath(startId: string, endId: string): string[] | nul
     done.add(currentId);
 
     const current = graph.map.get(currentId)!;
-    const steps: [string, boolean][] = [
-      ...current.children.map((id): [string, boolean] => [id, false]),
-      ...current.parents.map((id): [string, boolean] => [id, false]),
-      ...current.spouses.map((id): [string, boolean] => [id, true]),
-    ];
-    for (const [nextId, viaMarriage] of steps) {
+    const steps: [string, number][] = [];
+    const linkCost = (link: ParentLink | undefined) => {
+      const span = linkGenerations(link);
+      return (span.exact ? span.generations : UNRECORDED_GENERATIONS_COST) + (link?.tradition ? TRADITION_COST : 0);
+    };
+    for (const id of current.children) steps.push([id, linkCost(parentLink(id, currentId))]);
+    if (!options.descentOnly) {
+      for (const id of current.parents) steps.push([id, linkCost(parentLink(currentId, id))]);
+      for (const id of current.spouses) steps.push([id, SPOUSE_STEP_COST]);
+      for (const id of current.siblings ?? []) steps.push([id, SIBLING_STEP_COST]);
+    }
+
+    for (const [nextId, stepCost] of steps) {
       const next = graph.map.get(nextId);
       if (!next || done.has(nextId)) continue;
-      const stepCost = (viaMarriage ? SPOUSE_STEP_COST : 1) + (next.messianic ? 0 : OFF_MESSIANIC_LINE_COST);
-      const candidate = best + stepCost;
+      const candidate = best + stepCost + (next.messianic ? 0 : OFF_MESSIANIC_LINE_COST);
       if (candidate < (cost.get(nextId) ?? Infinity)) {
         cost.set(nextId, candidate);
         previous.set(nextId, currentId);
@@ -134,34 +225,10 @@ export function findShortestPath(startId: string, endId: string): string[] | nul
 
 const adamPathCache = new Map<string, string[] | null>();
 
-/** Shortest genealogical chain from Adam to this person (memoised: the graph never changes). */
+/** Line of descent from Adam to this person, parent to child only (memoised: the graph never changes). */
 export function lineageFromAdam(personId: string): string[] | null {
-  if (!adamPathCache.has(personId)) adamPathCache.set(personId, findShortestPath("adam", personId));
+  if (!adamPathCache.has(personId)) adamPathCache.set(personId, findShortestPath("adam", personId, { descentOnly: true }));
   return adamPathCache.get(personId) ?? null;
-}
-
-export type RelationStep = "parent" | "child" | "spouse" | "relative";
-
-export function relationBetween(fromId: string, toId: string): RelationStep {
-  const from = graph.map.get(fromId);
-  if (!from) return "relative";
-  if (from.children.includes(toId)) return "parent";
-  if (from.parents.includes(toId)) return "child";
-  if (from.spouses.includes(toId)) return "spouse";
-  return "relative";
-}
-
-export function describeRelationshipStep(fromId: string, toId: string): string {
-  switch (relationBetween(fromId, toId)) {
-    case "parent":
-      return "Parent of ↓";
-    case "child":
-      return "Child of ↑";
-    case "spouse":
-      return "Spouse of ∞";
-    default:
-      return "Relative of";
-  }
 }
 
 export interface SubgraphOptions {

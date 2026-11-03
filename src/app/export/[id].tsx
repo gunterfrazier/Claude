@@ -1,6 +1,6 @@
 import * as Clipboard from "expo-clipboard";
 import { useLocalSearchParams } from "expo-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
@@ -15,6 +15,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { SvgXml } from "react-native-svg";
 
+import { TranslationPicker } from "@/components/figure-bits";
 import { ChevronDownIcon, CopyIcon, PrintIcon, ShareIcon } from "@/components/icons";
 import { PersonPicker } from "@/components/person-picker";
 import { Button, Chip, SectionLabel, Segmented } from "@/components/ui";
@@ -28,9 +29,11 @@ import {
   type ExportFormat,
   type ExportSections,
 } from "@/lib/export";
-import { DEFAULT_FIGURE_ID, getFigure } from "@/lib/graph";
+import { preloadReferences } from "@/lib/bible";
+import { DEFAULT_FIGURE_ID, buildSubgraph, getFigure, resolveFigures } from "@/lib/graph";
 import { printHtml, sharePdf, shareTextFile } from "@/lib/share-file";
 import { DEPTH_OPTIONS, type Depth } from "@/state/app-state";
+import { useUserData } from "@/state/user-data";
 import { colors, fonts, radius } from "@/theme";
 
 const FORMAT_ORDER: ExportFormat[] = ["PDF", "DOC", "HTML", "MD", "TXT", "CSV", "SVG", "JSON"];
@@ -54,17 +57,41 @@ export default function ExportScreen() {
   const [busy, setBusy] = useState<"share" | "print" | null>(null);
   const [copied, setCopied] = useState(false);
 
-  const bundle = useMemo(() => buildExportBundle(personId, depth), [personId, depth]);
+  const { translation, setTranslation } = useUserData();
+  // Load the verse text the document will quote before building it.
+  const [textKey, setTextKey] = useState("");
+  const wantedKey = `${personId}|${depth}|${translation}`;
+  useEffect(() => {
+    let cancelled = false;
+    const tree = buildSubgraph(personId, { maxDepth: depth, includeSpouses: true, includeSiblings: true });
+    const refs = [
+      ...(getFigure(personId)?.scriptures.map((s) => s.ref) ?? []),
+      ...resolveFigures([...tree.keys()]).flatMap((f) => (f.scriptures[0] ? [f.scriptures[0].ref] : [])),
+    ];
+    preloadReferences(refs, translation)
+      .catch(() => {})
+      .finally(() => !cancelled && setTextKey(wantedKey));
+    return () => {
+      cancelled = true;
+    };
+  }, [personId, depth, translation, wantedKey]);
+  const textReady = textKey === wantedKey;
+
+  // Verse text is read when a document is generated, so the bundle needn't wait for loading.
+  const bundle = useMemo(() => buildExportBundle(personId, depth, translation), [personId, depth, translation]);
   const meta = EXPORT_FORMATS[format];
   const fileName = exportFileName(bundle, format);
 
   const preview = useMemo(() => {
     if (meta.textual)
-      return { kind: "text" as const, text: generateExport(format as Exclude<ExportFormat, "PDF">, bundle, sections) };
+      return {
+        kind: "text" as const,
+        text: textReady ? generateExport(format as Exclude<ExportFormat, "PDF">, bundle, sections) : "Loading verses…",
+      };
     const svg = generateTreeSvg(bundle);
     const [, w, h] = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/) ?? [];
     return { kind: "svg" as const, svg, ratio: Number(h) / Number(w) || 0.5 };
-  }, [bundle, sections, format, meta.textual]);
+  }, [bundle, sections, format, meta.textual, textReady]);
 
   const run = async (kind: "share" | "print", task: () => Promise<void>) => {
     setBusy(kind);
@@ -122,6 +149,11 @@ export default function ExportScreen() {
             </View>
             <ChevronDownIcon size={16} color={colors.amber700} />
           </Pressable>
+        </View>
+
+        <View style={styles.block}>
+          <SectionLabel>Bible translation for quotations</SectionLabel>
+          <TranslationPicker value={translation} onChange={setTranslation} />
         </View>
 
         <View style={styles.block}>
@@ -228,7 +260,7 @@ export default function ExportScreen() {
             )
           }
           onPress={print}
-          disabled={busy !== null}
+          disabled={busy !== null || !textReady}
           style={{ flex: 1 }}
         />
         <Button
@@ -241,7 +273,7 @@ export default function ExportScreen() {
             )
           }
           onPress={share}
-          disabled={busy !== null}
+          disabled={busy !== null || !textReady}
           style={{ flex: 1.4 }}
         />
       </View>

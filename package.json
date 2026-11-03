@@ -7,7 +7,9 @@
     "@expo-google-fonts/inter": "^0.4.2",
     "@expo-google-fonts/lora": "^0.4.2",
     "@expo/ui": "~58.0.26",
+    "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "~58.0.22",
+    "expo-asset": "~58.0.19",
     "expo-clipboard": "~58.0.4",
     "expo-constants": "~58.0.14",
     "expo-device": "~58.0.5",
@@ -48,7 +50,8 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "data:extract": "node scripts/extract-figures.mjs"
+    "data:check": "node --no-warnings scripts/check-data.mjs",
+    "bible:build": "node scripts/build-bible.mjs"
   },
   "private": true
 }

@@ -5,7 +5,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-na
 import Svg, { Circle, Defs, Line, Path, Pattern, Rect, Text as SvgText } from "react-native-svg";
 
 import type { Figure } from "@/data/types";
-import { getFigure } from "@/lib/graph";
+import { getFigure, parentLink } from "@/lib/graph";
 import { generationLabel, type NodePosition, type TreeLayout } from "@/lib/tree-layout";
 import { colors, fonts, shadow } from "@/theme";
 
@@ -33,6 +33,9 @@ interface EdgeShape {
   width: number;
   opacity: number;
   arrow?: string;
+  dash?: string;
+  /** Small label at the middle of the curve, e.g. "19 gen." */
+  label?: { x: number; y: number; text: string };
 }
 
 function buildEdges(
@@ -106,15 +109,28 @@ function buildEdges(
       const b = positions.get(childId);
       if (!b) continue;
       const onPath = highlighted.has(parentId) && highlighted.has(childId);
+      const link = parentLink(childId, parentId);
+      const skipped = link?.kind === "descendant";
       const selected =
         parentId === selectedId || childId === selectedId || (!selectedId && (parentId === focusId || childId === focusId));
       edges.push({
         key: `p-${parentId}-${childId}`,
         kind: "parent",
         d: curve(a, b),
+        dash: skipped ? "7,5" : link?.kind === "legal" ? "2,4" : undefined,
+        label: skipped
+          ? {
+              x: (a.cx + b.cx) / 2,
+              y: (a.y + dims.nodeH + b.y) / 2,
+              text: link?.generations ? `${link.generations} gen.` : "gens. unrecorded",
+            }
+          : link?.kind === "legal"
+            ? { x: (a.cx + b.cx) / 2, y: (a.y + dims.nodeH + b.y) / 2, text: "legal" }
+            : undefined,
         stroke: onPath ? colors.blue700 : selected ? colors.amber700 : colors.parchment500,
         width: onPath ? 3.5 : selected ? 2.6 : 1.8,
-        opacity: hasHighlight && !onPath ? 0.35 : 0.9,
+        // Links that rest on tradition are drawn fainter.
+        opacity: (hasHighlight && !onPath ? 0.35 : 0.9) * (link?.tradition ? 0.55 : 1),
         arrow: arrowAt(b),
       });
     }
@@ -287,9 +303,34 @@ function EdgePath({ edge }: { edge: EdgeShape }) {
         stroke={edge.stroke}
         strokeWidth={edge.width}
         strokeOpacity={edge.opacity}
-        strokeDasharray={edge.kind === "associate" ? "6,4" : undefined}
+        strokeDasharray={edge.kind === "associate" ? "6,4" : edge.dash}
       />
       {edge.arrow ? <Path d={edge.arrow} fill={edge.stroke} fillOpacity={edge.opacity} /> : null}
+      {edge.label ? (
+        <>
+          <Rect
+            x={edge.label.x - edge.label.text.length * 3.1 - 6}
+            y={edge.label.y - 9}
+            width={edge.label.text.length * 6.2 + 12}
+            height={18}
+            rx={9}
+            fill={colors.canvas}
+            stroke={edge.stroke}
+            strokeWidth={1}
+            strokeOpacity={edge.opacity}
+          />
+          <SvgText
+            x={edge.label.x}
+            y={edge.label.y + 3.5}
+            textAnchor="middle"
+            fontSize={10}
+            fontWeight="bold"
+            fill={colors.amber900}
+          >
+            {edge.label.text}
+          </SvgText>
+        </>
+      ) : null}
     </>
   );
 }
