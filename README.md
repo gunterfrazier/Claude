@@ -89,8 +89,22 @@ npm run lint        # ESLint
 
 Use `npx expo install <package>` rather than `npm install` so you get versions compatible with the Expo SDK.
 
-## Building for the app stores
+## Building with EAS
 
-Use [EAS Build](https://docs.expo.dev/build/introduction/): `npx eas-cli@latest build --platform all`.
-You need a free Expo account; App Store builds also need an Apple Developer account. Set
-`ios.bundleIdentifier` and `android.package` in `app.json` before the first store build.
+Builds run on Expo's servers with [EAS Build](https://docs.expo.dev/build/introduction/), using the
+profiles in `eas.json`. You need a free Expo account. The first time, link the project to your
+account (this adds its project ID to `app.json`):
+
+```bash
+npx eas-cli@latest login
+npx eas-cli@latest init
+```
+
+| Command | Builds |
+| --- | --- |
+| `npx eas-cli@latest build --platform android --profile preview` | An Android `.apk` you can install on any phone from the link EAS gives you |
+| `npx eas-cli@latest build --platform ios --profile preview` | An iPhone build for devices you register (needs an Apple Developer account) |
+| `npx eas-cli@latest build --platform all --profile production` | Store builds (Android App Bundle and iOS), with build numbers incremented automatically |
+
+The app ID is `com.gunterfrazier.bibliatree` (`android.package` and `ios.bundleIdentifier` in
+`app.json`). It can still be changed freely until the app is first published to a store.
