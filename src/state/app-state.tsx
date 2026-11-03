@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 
-import { DEFAULT_FIGURE_ID, getFigure, hasFigure, lineageFromAdam } from "@/lib/graph";
+import { DEFAULT_FIGURE_ID, formatGenerations, getFigure, hasFigure, lineageFromAdam, summarizePath } from "@/lib/graph";
 
 export const DEPTH_OPTIONS = [
   { value: 2, short: "±2", label: "±2 Generations (Focused)" },
@@ -88,7 +88,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       const path = lineageFromAdam(id);
       if (!path || path.length < 2) return false;
       const chain = path.map((p) => getFigure(p)?.name).join(" → ");
-      highlightPath(path, `Direct lineage (${path.length} generations): ${chain}`);
+      highlightPath(path, `Lineage from Adam (${formatGenerations(summarizePath(path))}): ${chain}`);
       return true;
     },
     [highlightPath],
