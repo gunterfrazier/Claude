@@ -92,13 +92,13 @@ Use `npx expo install <package>` rather than `npm install` so you get versions c
 ## Building with EAS
 
 Builds run on Expo's servers with [EAS Build](https://docs.expo.dev/build/introduction/), using the
-profiles in `eas.json`. You need a free Expo account. The first time, link the project to your
-account (this adds its project ID to `app.json`):
+profiles in `eas.json`. The project is linked to the Expo project
+[`@gunterfrazier/bibliatree`](https://expo.dev/accounts/gunterfrazier/projects/bibliatree)
+(`owner` and `extra.eas.projectId` in `app.json`).
 
-```bash
-npx eas-cli@latest login
-npx eas-cli@latest init
-```
+Sign in with `npx eas-cli@latest login`, or, for CI and other non-interactive use, set an Expo
+access token in the `EXPO_TOKEN` environment variable. Keep the token in your CI's secret store;
+never commit it.
 
 | Command | Builds |
 | --- | --- |

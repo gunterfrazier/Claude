@@ -46,6 +46,12 @@
       "reactCompiler": true
     },
     "description": "Interactive Biblical genealogy, lineage pathfinder and scripture concordance.",
-    "backgroundColor": "#1e1812"
+    "backgroundColor": "#1e1812",
+    "extra": {
+      "eas": {
+        "projectId": "5b7ee665-63c6-43c8-a9e1-d42bf78f5370"
+      }
+    },
+    "owner": "gunterfrazier"
   }
 }
