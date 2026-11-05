@@ -7,7 +7,7 @@ import { SearchIcon } from "@/components/icons";
 import { BrandHeader, Button, Chip, HorizontalChips } from "@/components/ui";
 import type { Figure } from "@/data/types";
 import { allFigures } from "@/lib/graph";
-import { ERA_FILTERS, searchFigures, type EraFilter } from "@/lib/search";
+import { ERA_FILTERS, GROUP_FILTERS, searchFigures, type EraFilter, type GroupFilter } from "@/lib/search";
 import { useAppState } from "@/state/app-state";
 import { colors, fonts, radius, shadow } from "@/theme";
 
@@ -16,7 +16,8 @@ export default function FiguresScreen() {
   const app = useAppState();
   const [query, setQuery] = useState("");
   const [era, setEra] = useState<EraFilter>("ALL");
-  const results = useMemo(() => searchFigures(query, era), [query, era]);
+  const [group, setGroup] = useState<GroupFilter>("ANY");
+  const results = useMemo(() => searchFigures(query, era, undefined, group), [query, era, group]);
 
   const buildTree = (id: string) => {
     app.focusOn(id);
@@ -50,6 +51,11 @@ export default function FiguresScreen() {
               active={era === f.key}
               onPress={() => setEra(f.key)}
             />
+          ))}
+        </HorizontalChips>
+        <HorizontalChips>
+          {GROUP_FILTERS.map((g) => (
+            <Chip key={g.key} tone="dark" label={g.label} active={group === g.key} onPress={() => setGroup(g.key)} />
           ))}
         </HorizontalChips>
       </BrandHeader>

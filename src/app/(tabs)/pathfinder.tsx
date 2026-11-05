@@ -2,10 +2,11 @@ import { useRouter } from "expo-router";
 import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
+import { ScriptureSnippet } from "@/components/figure-bits";
 import { ChevronDownIcon, SwapIcon } from "@/components/icons";
 import { PersonPicker } from "@/components/person-picker";
 import { Badge, BrandHeader, Button, Card, Chip, IconButton } from "@/components/ui";
-import { describeRelationshipStep, findShortestPath, getFigure } from "@/lib/graph";
+import { describeRelationshipStep, findShortestPath, formatGenerations, getFigure, stepLink, summarizePath } from "@/lib/graph";
 import { useAppState } from "@/state/app-state";
 import { colors, fonts, radius, shadow } from "@/theme";
 
@@ -98,8 +99,12 @@ export default function PathfinderScreen() {
                 {start.name} → {end.name}
               </Text>
               <Text style={styles.summaryMeta}>
-                {path.length - 1} generational {path.length - 1 === 1 ? "step" : "steps"} · {path.length} figures in chain
+                {summarizePath(path).direct ? formatGenerations(summarizePath(path)) : `${path.length - 1} links`} · {path.length}{" "}
+                figures in chain
               </Text>
+              {summarizePath(path).traditional ? (
+                <Text style={styles.summaryMeta}>Includes a link based on tradition rather than an explicit statement.</Text>
+              ) : null}
             </View>
 
             {path.map((id, index) => {
@@ -133,11 +138,10 @@ export default function PathfinderScreen() {
                       <Badge label={p.era} />
                       {p.messianic ? <Badge label="★ Messianic Line" tone="messianic" /> : null}
                     </View>
-                    {verse ? (
-                      <Text style={styles.verse} numberOfLines={3}>
-                        {verse.ref} — “{verse.text}”
-                      </Text>
+                    {nextId && stepLink(id, nextId)?.via ? (
+                      <Text style={styles.via}>Generations between: {stepLink(id, nextId)!.via!.join(" → ")}</Text>
                     ) : null}
+                    {verse ? <ScriptureSnippet refText={verse.ref} /> : null}
                   </View>
                 </Pressable>
               );
@@ -245,6 +249,7 @@ const styles = StyleSheet.create({
   stepName: { fontFamily: fonts.display, fontSize: 15.5, color: colors.amber950, flexShrink: 1 },
   stepTitle: { fontFamily: fonts.sans, fontSize: 12.5, lineHeight: 17, color: colors.stone600 },
   badgeRow: { flexDirection: "row", flexWrap: "wrap", gap: 6 },
+  via: { fontFamily: fonts.sans, fontSize: 12, lineHeight: 17, color: colors.stone600 },
   verse: {
     fontFamily: fonts.serifItalic,
     fontSize: 12.5,

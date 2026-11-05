@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { AppStateProvider } from "@/state/app-state";
+import { UserDataProvider } from "@/state/user-data";
 import { colors, fonts } from "@/theme";
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
@@ -36,22 +37,26 @@ export default function RootLayout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: colors.header }}>
-      <AppStateProvider>
-        <StatusBar style="light" />
-        <Stack
-          screenOptions={{
-            headerStyle: { backgroundColor: colors.header },
-            headerTintColor: colors.amber200,
-            headerTitleStyle: { fontFamily: fonts.display, color: colors.amber100 },
-            headerShadowVisible: false,
-            contentStyle: { backgroundColor: colors.canvas },
-          }}
-        >
-          <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "BibliaTree" }} />
-          <Stack.Screen name="person/[id]" options={{ title: "Dossier", headerBackTitle: "Back" }} />
-          <Stack.Screen name="export/[id]" options={{ title: "Save & Print", presentation: "modal" }} />
-        </Stack>
-      </AppStateProvider>
+      <UserDataProvider>
+        <AppStateProvider>
+          <StatusBar style="light" />
+          <Stack
+            screenOptions={{
+              headerStyle: { backgroundColor: colors.header },
+              headerTintColor: colors.amber200,
+              headerTitleStyle: { fontFamily: fonts.display, color: colors.amber100 },
+              headerShadowVisible: false,
+              contentStyle: { backgroundColor: colors.canvas },
+            }}
+          >
+            <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "BibliaTree" }} />
+            <Stack.Screen name="person/[id]" options={{ title: "Dossier", headerBackTitle: "Back" }} />
+            <Stack.Screen name="export/[id]" options={{ title: "Save & Print", presentation: "modal" }} />
+            <Stack.Screen name="passage" options={{ title: "Scripture", headerBackTitle: "Back" }} />
+            <Stack.Screen name="settings" options={{ title: "Settings", headerBackTitle: "Back" }} />
+          </Stack>
+        </AppStateProvider>
+      </UserDataProvider>
     </GestureHandlerRootView>
   );
 }

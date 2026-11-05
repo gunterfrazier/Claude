@@ -9,9 +9,14 @@
     "userInterfaceStyle": "light",
     "ios": {
       "icon": "./assets/images/icon.png",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gunterfrazier.bibliatree",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.gunterfrazier.bibliatree",
       "adaptiveIcon": {
         "backgroundColor": "#1e1812",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -34,7 +39,8 @@
           "imageWidth": 120
         }
       ],
-      "expo-sharing"
+      "expo-sharing",
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true,
