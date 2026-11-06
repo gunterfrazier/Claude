@@ -3,7 +3,7 @@
 An interactive Biblical genealogy and scripture explorer for iOS and Android, built with
 [Expo](https://expo.dev) (SDK 58), React Native and TypeScript. It grew out of the BibliaTree web
 prototype kept in [`reference/bibliatree-web.html`](reference/bibliatree-web.html) and now covers
-3,175 people, with four complete Bible translations bundled for offline reading. Every family link was
+3,129 people, with four complete Bible translations bundled for offline reading. Every family link was
 tested against the tagged Hebrew and Greek, and the Bible decides.
 
 ## Features
@@ -92,6 +92,9 @@ the original hand-entered file, then tests each one against the tagged Hebrew an
 - A claim Scripture contradicts is dropped and logged in `reference/people-report.json`.
 - A claim Scripture doesn't address is kept only if named open sources support it, and is marked with `tradition`.
 - Where Scripture itself names two fathers, both stay, with a note.
+- People a source inferred but no verse refers to are left out, and so are verses that name someone only by their
+  clan or nation ("the Kenizzite").
+- A line of descent that skips generations cites the verse for each step.
 
 Ids from the original file are kept, so saved figures and notes still open. Run the checks with:
 
@@ -102,7 +105,8 @@ npm run data:check
 Data sources: [TIPNR](https://github.com/STEPBible/STEPBible-Data) by STEPBible.org (CC BY 4.0),
 [BibleData](https://github.com/BradyStephenson/bible-data) by Brady Stephenson (CC BY 4.0),
 [Theographic](https://github.com/robertrouse/theographic-bible-metadata) by Robert Rouse (CC BY-SA 4.0), and
-[ACAI](https://github.com/BibleAquifer/ACAI) by Mission Mutual (CC BY-SA 4.0).
+[ACAI](https://github.com/BibleAquifer/ACAI) by Mission Mutual (CC BY-SA 4.0). The people data files are
+shared under CC BY-SA 4.0, separately from the code's MIT license. See [DATA-LICENSE.md](DATA-LICENSE.md).
 
 ## Bible texts
 

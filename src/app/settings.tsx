@@ -71,7 +71,7 @@ export default function SettingsScreen() {
         <Text style={styles.body}>
           Scripture gives no calendar dates, so BC and AD dates are approximate and follow one chronology (Floyd Nolen Jones, via Theographic). Scholars date many events differently. Years from creation come from the ages Scripture gives, through BibleData’s reckoning. Summaries are written by STEPBible and are secondary to the verses.
         </Text>
-        <Text style={styles.small}>People and summaries: TIPNR by STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). More people and family claims: BibleData by Brady Stephenson (CC BY 4.0). Cross-checks and dates: Theographic Bible Metadata by Robert Rouse (CC BY-SA 4.0). Cross-checks: ACAI by Mission Mutual (CC BY-SA 4.0).</Text>
+        <Text style={styles.small}>People and summaries: TIPNR by STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). More people and family claims: BibleData by Brady Stephenson (CC BY 4.0). Cross-checks and dates: Theographic Bible Metadata by Robert Rouse (CC BY-SA 4.0). Cross-checks: ACAI by Mission Mutual (CC BY-SA 4.0). The people data is shared under CC BY-SA 4.0.</Text>
         <Text style={styles.small}>Bible texts: scrollmapper/bible_databases on GitHub.</Text>
       </Card>
 

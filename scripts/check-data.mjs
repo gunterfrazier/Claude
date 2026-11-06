@@ -70,7 +70,28 @@ function nameTokens(f) {
   }
   return [...tokens];
 }
-const mentions = (text, tokens) => tokens.some((t) => new RegExp(`\\b${t}`, "i").test(text));
+// Spellings differ between translations and the source lists (Puah and Puvah, Shemuel and Samuel), so a name counts
+// as mentioned if a word in the passage is within two letters of it.
+function lev(a, b) {
+  if (Math.abs(a.length - b.length) > 2) return 3;
+  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= b.length; j++) cur.push(Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)));
+    prev = cur;
+  }
+  return prev[b.length];
+}
+const words = (text) => text.toLowerCase().replace(/[^a-z\s-]/g, " ").split(/[\s-]+/).filter(Boolean);
+const mentions = (text, tokens) =>
+  tokens.some((t) => {
+    // A short name such as On (Numbers 16:1) has to match as a capitalized word.
+    // Peoples count: Lud is named in Genesis 10:13 as the Ludites.
+    if (t.length <= 3) return new RegExp(`\\b${t}(?:ites?|im)?\\b`).test(text);
+    if (new RegExp(`\\b${t}`, "i").test(text) || (t.length >= 5 && text.toLowerCase().replace(/[^a-z]/g, "").includes(t.toLowerCase()))) return true;
+    const n = t.toLowerCase();
+    return n.length >= 5 && words(text).some((w) => lev(w, n) <= (n.length >= 7 ? 2 : 1));
+  });
 
 function checkRef(ref, where, tokens) {
   let found = false;
@@ -108,23 +129,35 @@ for (const f of FIGURES) {
     if (!f.parents.includes(p)) errors.push(`${f.id}.parentLinks.${p}: not a parent`);
   if (f.dates && !(f.dates.from <= f.dates.to)) errors.push(`${f.id}.dates: from after to`);
 
-  const tokens = nameTokens(f);
+  // Someone Scripture leaves unnamed ("the Shunammite woman") can't be found by name, so only the reference itself is
+  // checked, and a parent link must name the parent instead.
+  const own = nameTokens(f);
+  const tokens = f.unnamed ? null : own.length ? own : [f.name];
   for (const s of f.scriptures) checkRef(s.ref, `${f.id} scripture`, tokens);
 
   for (const [p, link] of Object.entries(f.parentLinks ?? {})) {
     const parent = byId.get(p);
     if (!parent) continue;
-    for (const ref of link.refs ?? []) {
-      // A parent link's passage should name the child, unless the link is a tribe or nation tie.
-      checkRef(ref, `${f.id} ← ${p} link`, link.kind === "descendant" && !link.via ? [...tokens, ...nameTokens(parent)] : tokens);
-      if (link.via) {
-        for (const name of new Set(link.via)) {
-          const ok = TRANSLATIONS.some((t) => {
+    for (const [i, ref] of (link.refs ?? []).entries()) {
+      // A parent link's passage should name the child, unless the link is a tribe or nation tie. In a line of
+      // descent the first verse is the link's own, and the rest are its steps, checked below.
+      if (i > 0 && link.via) {
+        checkRef(ref, `${f.id} ← ${p} link`, null);
+        continue;
+      }
+      checkRef(ref, `${f.id} ← ${p} link`, !tokens ? nameTokens(parent) : link.kind === "descendant" && !link.via ? [...tokens, ...nameTokens(parent)] : tokens);
+    }
+    // A line of descent cites the verse for each step, so every name in between should appear in one of them.
+    if (link.via) {
+      for (const name of new Set(link.via)) {
+        if (/^(daughter|son|wife|husband|father|mother)\b/i.test(name)) continue;
+        const ok = (link.refs ?? []).some((ref) =>
+          TRANSLATIONS.some((t) => {
             const r = passageText(ref, t);
-            return !r.error && mentions(r.text, [name]);
-          });
-          if (!ok) warnings.push(`${f.id} ← ${p} link: intermediate name ${name} not found in ${ref}`);
-        }
+            return !r.error && mentions(r.text, nameTokens({ name }));
+          }),
+        );
+        if (!ok) warnings.push(`${f.id} ← ${p} link: intermediate name ${name} not found in ${(link.refs ?? []).join("; ")}`);
       }
     }
   }

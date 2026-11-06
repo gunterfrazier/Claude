@@ -1,61 +1,61 @@
 {
  "counts": {
-  "tipnr_people": 3054,
-  "bibledata_matched": "2871/3008",
-  "theographic_matched": "2948/3067",
-  "acai_matched": "3261/3426",
+  "tipnr_people": 3022,
+  "bibledata_matched": "2877/3008",
+  "theographic_matched": "3012/3067",
+  "acai_matched": "3251/3426",
   "old_matched": "329/330",
   "old_unmatched": [
    "shunammite"
   ],
-  "parent_claims": 2205,
-  "spouse_claims": 154,
-  "sibling_claims": 2558,
+  "parent_claims": 2141,
+  "spouse_claims": 141,
+  "sibling_claims": 2559,
   "levels": {
    "parent": [
     [
      "stated",
-     1379
+     1420
     ],
     [
      "together",
-     388
+     332
     ],
     [
      "implied",
-     283
+     228
     ],
     [
      "none",
-     155
+     161
     ]
    ],
    "spouse": [
     [
      "stated",
-     90
+     88
     ],
     [
      "none",
-     36
+     32
     ],
     [
      "together",
-     20
+     15
     ],
     [
      "implied",
-     8
+     6
     ]
    ],
    "sibling": [
     [
      "none",
-     1204
+     1206
     ],
     [
      "together",
-     1180
+     1179
     ],
     [
      "stated",
@@ -64,19 +64,20 @@
    ]
   },
   "kept": {
-   "parent": 1956,
-   "spouse": 145,
+   "parent": 1855,
+   "spouse": 132,
    "sibling": 176
   },
-  "overridden": 48,
-  "identity": 39,
-  "secondary": 355,
-  "unsupported": 168,
-  "scripture_differs": 2,
-  "cycles": 3,
-  "people_final": 3175,
-  "messianic_line": 161,
-  "bio_sentences_removed": 78,
+  "overridden": 94,
+  "identity": 43,
+  "secondary": 261,
+  "unsupported": 157,
+  "scripture_differs": 3,
+  "cycles": 0,
+  "ids_kept_from_previous": true,
+  "people_final": 3129,
+  "messianic_line": 150,
+  "bio_sentences_removed": 77,
   "dates_overridden": 3
  },
  "overridden": [
@@ -147,11 +148,46 @@
    "scripture": "Scripture names Jehoiachin (1 Chronicles 3:17)"
   },
   {
+   "claim": "Judith (Gen.26.34) is a parent of Jeush (Gen.36.5-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Oholibamah (Genesis 36:5)"
+  },
+  {
+   "claim": "Judith (Gen.26.34) is a parent of Jalam (Gen.36.5-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Oholibamah (Genesis 36:5)"
+  },
+  {
+   "claim": "Judith (Gen.26.34) is a parent of Korah (Gen.36.5-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Oholibamah (Genesis 36:5)"
+  },
+  {
+   "claim": "Beeri (Gen.26.34) is a parent of Dishon (Gen.36.25-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Anah (Genesis 36:25)"
+  },
+  {
    "claim": "Benjamin (Gen.35.18-Rev) is a parent of Gera (1Ch.8.3)",
    "sources": [
     "BibleData"
    ],
    "scripture": "Scripture names Bela (1 Chronicles 8:3)"
+  },
+  {
+   "claim": "Simeon (Gen.29.33-Rev) is a parent of Salu (Num.25.14)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Numbers 25:14 says Salu led a Simeonite family, not that Simeon was his father"
   },
   {
    "claim": "Ephraim (Gen.41.52-Zec) is a parent of Tahan (1Ch.7.25)",
@@ -161,6 +197,27 @@
    "scripture": "Scripture names Telah (1 Chronicles 7:25)"
   },
   {
+   "claim": "Jaare-oregim (2Sa.21.19-1Ch) is a parent of Elhanan (2Sa.23.24-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Dodo (2 Samuel 23:24)"
+  },
+  {
+   "claim": "Eliahba (2Sa.23.32-1Ch) is a parent of Jashen (2Sa.23.32-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "2 Samuel 23:32 lists Eliahba and the sons of Jashen as different men"
+  },
+  {
+   "claim": "Eliahba (2Sa.23.32-1Ch) is a parent of Jonathan (2Sa.23.32-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "2 Samuel 23:32 lists Eliahba and the sons of Jashen as different men"
+  },
+  {
    "claim": "Ela (1Ki.4.18) is a parent of Shimei (1Ch.3.19)",
    "sources": [
     "BibleData"
@@ -168,7 +225,35 @@
    "scripture": "Scripture names Pedaiah (1 Chronicles 3:19)"
   },
   {
-   "claim": "Meshullam (1Ch.3.19) is a parent of Hasadiah (1Ch.3.20)",
+   "claim": "Zerah (Gen.38.30-Mat) is a parent of Darda (1Ki.4.31)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Mahol (1 Kings 4:31)"
+  },
+  {
+   "claim": "Korah (1Ch.2.43) is a parent of Tappuah (1Ch.2.43)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "1 Chronicles 2:43 lists Tappuah with Korah, as sons of Hebron"
+  },
+  {
+   "claim": "Korah (1Ch.2.43) is a parent of Rekem (1Ch.2.43-)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "1 Chronicles 2:43 lists Rekem with Korah, as sons of Hebron"
+  },
+  {
+   "claim": "Korah (1Ch.2.43) is a parent of Shema (1Ch.2.43-)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "1 Chronicles 2:43 lists Shema with Korah, as sons of Hebron"
+  },
+  {
+   "claim": "Meshullam (1Ch.3.19) is a parent of Hashubah (1Ch.3.20)",
    "sources": [
     "BibleData"
    ],
@@ -189,11 +274,25 @@
    "scripture": "Scripture names Zerubbabel (1 Chronicles 3:19)"
   },
   {
+   "claim": "Meshullam (1Ch.3.19) is a parent of Hasadiah (1Ch.3.20)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Zerubbabel (1 Chronicles 3:19)"
+  },
+  {
    "claim": "Meshullam (1Ch.3.19) is a parent of Jushab-hesed (1Ch.3.20)",
    "sources": [
     "BibleData"
    ],
    "scripture": "Scripture names Zerubbabel (1 Chronicles 3:19)"
+  },
+  {
+   "claim": "Assir (Exo.6.24-1Ch) is a parent of Elkanah (Exo.6.24-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Exodus 6:24 names Korah as the parent"
   },
   {
    "claim": "Elkanah (Exo.6.24-1Ch) is a parent of Ahimoth (1Ch.6.25-)",
@@ -217,7 +316,14 @@
    "scripture": "Scripture names Jediael (1 Chronicles 7:10)"
   },
   {
-   "claim": "Ir (1Ch.7.12) is a parent of Huppim (Gen.46.21-1Ch)",
+   "claim": "Iri (1Ch.7.7) is a parent of Muppim (Gen.46.21-1Ch)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Benjamin (Genesis 46:21)"
+  },
+  {
+   "claim": "Iri (1Ch.7.7) is a parent of Huppim (Gen.46.21-1Ch)",
    "sources": [
     "BibleData"
    ],
@@ -229,6 +335,35 @@
     "BibleData"
    ],
    "scripture": "Scripture names Aher (1 Chronicles 7:12)"
+  },
+  {
+   "claim": "Peresh (1Ch.7.16) is a parent of Ulam (1Ch.7.16-)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "1 Chronicles 7:16 names Sheresh as the parent"
+  },
+  {
+   "claim": "Peresh (1Ch.7.16) is a parent of Rakem (1Ch.7.16)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Sheresh (1 Chronicles 7:16)"
+  },
+  {
+   "claim": "Ephraim (Gen.41.52-Zec) is a parent of Tahath (1Ch.7.20a)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "1 Chronicles 7:20 names Bered as the parent"
+  },
+  {
+   "claim": "Eleadah (1Ch.7.20) is a parent of Tahath (1Ch.7.20a)",
+   "sources": [
+    "BibleData",
+    "Theographic"
+   ],
+   "scripture": "1 Chronicles 7:20 names Bered as the parent"
   },
   {
    "claim": "Ephraim (Gen.41.52-Zec) is a parent of Telah (1Ch.7.25)",
@@ -259,11 +394,137 @@
    "scripture": "Scripture names Shual (1 Chronicles 7:39)"
   },
   {
-   "claim": "Ehud (1Ch.7.10) is a parent of Ahihud (1Ch.8.7)",
+   "claim": "Elpaal (1Ch.8.11-) is a parent of Ahio (1Ch.8.14)",
    "sources": [
     "BibleData"
    ],
-   "scripture": "Scripture names Gera (1 Chronicles 8:7)"
+   "scripture": "Scripture names Beriah (1 Chronicles 8:16)"
+  },
+  {
+   "claim": "Elpaal (1Ch.8.11-) is a parent of Shashak (1Ch.8.14-)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Beriah (1 Chronicles 8:16)"
+  },
+  {
+   "claim": "Elpaal (1Ch.8.11-) is a parent of Jeremoth (1Ch.8.14)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Beriah (1 Chronicles 8:16)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Jakim (1Ch.8.19)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Zichri (1Ch.8.19)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Zabdi (1Ch.8.19)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Elienai (1Ch.8.20)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Zillethai (1Ch.8.20)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Eliel (1Ch.8.20)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Adaiah (1Ch.8.21)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Beraiah (1Ch.8.21)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Shema (1Ch.8.13) is a parent of Shimrath (1Ch.8.21)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Shimei (1 Chronicles 8:21)"
+  },
+  {
+   "claim": "Jeremoth (1Ch.8.14) is a parent of Shamsherai (1Ch.8.26)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Jeroham (1 Chronicles 8:27)"
+  },
+  {
+   "claim": "Jeremoth (1Ch.8.14) is a parent of Shehariah (1Ch.8.26)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Jeroham (1 Chronicles 8:27)"
+  },
+  {
+   "claim": "Jeremoth (1Ch.8.14) is a parent of Athaliah (1Ch.8.26)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Jeroham (1 Chronicles 8:27)"
+  },
+  {
+   "claim": "Jeremoth (1Ch.8.14) is a parent of Jaareshiah (1Ch.8.27)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Jeroham (1 Chronicles 8:27)"
+  },
+  {
+   "claim": "Jeremoth (1Ch.8.14) is a parent of Elijah (1Ch.8.27)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Jeroham (1 Chronicles 8:27)"
+  },
+  {
+   "claim": "Jeremoth (1Ch.8.14) is a parent of Zichri (1Ch.8.27)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Jeroham (1 Chronicles 8:27)"
+  },
+  {
+   "claim": "Ner (1Sa.14.50-1Ch) is a parent of Kish (1Sa.9.1-Act)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "1 Samuel 14:51 says Saul's father Kish and Abner's father Ner were both sons of Abiel"
   },
   {
    "claim": "Ahitub (1Ch.6.11-Ezr) is a parent of Meraioth (1Ch.6.6-Neh)",
@@ -273,19 +534,39 @@
    "scripture": "Scripture names Zerahiah (1 Chronicles 6:6)"
   },
   {
-   "claim": "Azrikam (1Ch.9.14-Neh) is a parent of Hashabiah (1Ch.9.14-Neh)",
-   "sources": [
-    "BibleData",
-    "Theographic"
-   ],
-   "scripture": "Scripture has it the other way round (1 Chronicles 9:14)"
-  },
-  {
    "claim": "Shallum (1Ch.9.17-Neh) is a parent of Zechariah (1Ch.9.21-)",
    "sources": [
     "BibleData"
    ],
    "scripture": "Scripture names Meshelemiah (1 Chronicles 9:21)"
+  },
+  {
+   "claim": "Joshaphat (1Ch.11.43) is a parent of Hanan (1Ch.11.43)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "1 Chronicles 11:43 names Maacah as the parent"
+  },
+  {
+   "claim": "Shallum (1Ch.9.17-Neh) is a parent of Jediael (1Ch.26.2)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Meshelemiah (1 Chronicles 26:2)"
+  },
+  {
+   "claim": "Shallum (1Ch.9.17-Neh) is a parent of Zebadiah (1Ch.26.2)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Meshelemiah (1 Chronicles 26:2)"
+  },
+  {
+   "claim": "Shallum (1Ch.9.17-Neh) is a parent of Jathniel (1Ch.26.2)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Scripture names Meshelemiah (1 Chronicles 26:2)"
   },
   {
    "claim": "Jehiel (1Ch.15.18-) is a parent of Zetham (1Ch.23.8-)",
@@ -300,6 +581,29 @@
     "BibleData"
    ],
    "scripture": "Scripture names Libni (1 Chronicles 23:8)"
+  },
+  {
+   "claim": "Obed (2Ch.23.1) is a parent of Azariah (2Ch.23.1a)",
+   "sources": [
+    "BibleData",
+    "Theographic"
+   ],
+   "scripture": "2 Chronicles 23:1 names Jeroham as the parent"
+  },
+  {
+   "claim": "Jehallelel (2Ch.29.12) is a parent of Azariah (2Ch.29.12a)",
+   "sources": [
+    "BibleData",
+    "Theographic"
+   ],
+   "scripture": "2 Chronicles 29:12 names Merari as the parent"
+  },
+  {
+   "claim": "Shecaniah (Neh.6.18) is a parent of Jehohanan (Neh.6.18)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Nehemiah 6:18 names Arah as the parent"
   },
   {
    "claim": "Azarel (Neh.12.36) is a parent of Maasai (1Ch.9.12-Neh)",
@@ -323,6 +627,13 @@
    "scripture": "Scripture names Joshua (Nehemiah 12:10)"
   },
   {
+   "claim": "Levi (Gen.29.34-Rev) is a parent of Mattaniah (Neh.13.13)",
+   "sources": [
+    "BibleData"
+   ],
+   "scripture": "Nehemiah 13:13 names Mattaniah as Zaccur's father, with the Levites, not as a son of Levi"
+  },
+  {
    "claim": "Hilkiah (Neh.8.4) is a parent of Gemariah (Jer.36.10-)",
    "sources": [
     "BibleData"
@@ -337,67 +648,46 @@
    "scripture": "Scripture names Hammelech (Jeremiah 36:26)"
   },
   {
-   "claim": "Ahimaaz (1Sa.14.50) is a parent of Abinadab (1Sa.14.49-1Ch)",
+   "claim": "Zedekiah (2Ki.24.17-Jer) is a parent of Malchiah (Jer.21.1-)",
    "sources": [
-    "Theographic"
+    "BibleData"
    ],
-   "scripture": "Scripture names Saul (1 Samuel 14:49)"
+   "scripture": "Jeremiah 38:6 calls Malchiah \"the king's son\" without naming the king, and Jeremiah 21:1 names Malchijah only as Pashhur's father"
   },
   {
-   "claim": "Ahimaaz (1Sa.14.50) is a parent of Malchi-shua (1Sa.14.49-1Ch)",
+   "claim": "Beeri (Gen.26.34) is a parent of Oholibamah (Gen.36.2-1Ch)",
    "sources": [
     "Theographic"
    ],
-   "scripture": "Scripture names Saul (1 Samuel 14:49)"
+   "scripture": "Scripture names Anah (Genesis 36:2)"
   },
   {
-   "claim": "Ahimaaz (1Sa.14.50) is a parent of Jonathan (1Sa.13.2-1Ch)",
+   "claim": "Shobal (Gen.36.20-1Ch) is a parent of Anah (Gen.36.2-1Ch)",
    "sources": [
     "Theographic"
    ],
-   "scripture": "Scripture names Saul (1 Samuel 13:16)"
+   "scripture": "Scripture names Zibeon (Genesis 36:2)"
   },
   {
-   "claim": "Ahimaaz (1Sa.14.50) is a parent of Merab (1Sa.14.49-2Sa)",
+   "claim": "Shua (Gen.38.2-1Ch) is a parent of Er (Gen.38.3-1Ch)",
    "sources": [
     "Theographic"
    ],
-   "scripture": "Scripture names Saul (1 Samuel 14:49)"
+   "scripture": "Shua was the father of Judah's wife (Genesis 38:2). 1 Chronicles 2:3 names Bath-shua as the mother"
   },
   {
-   "claim": "Ahimaaz (1Sa.14.50) is a parent of Michal (1Sa.14.49-1Ch)",
+   "claim": "Shua (Gen.38.2-1Ch) is a parent of Shelah (Gen.38.5-1Ch)",
    "sources": [
     "Theographic"
    ],
-   "scripture": "Scripture names Saul (1 Samuel 14:49)"
+   "scripture": "Shua was the father of Judah's wife (Genesis 38:2). 1 Chronicles 2:3 names Bath-shua as the mother"
   },
   {
-   "claim": "Anah (Gen.36.2-1Ch) is a parent of Judith (Gen.26.34)",
+   "claim": "Shua (Gen.38.2-1Ch) is a parent of Onan (Gen.38.4-1Ch)",
    "sources": [
     "Theographic"
    ],
-   "scripture": "Scripture names Beeri (Genesis 26:34)"
-  },
-  {
-   "claim": "Judith (Gen.26.34) is a parent of Jeush (Gen.36.5-1Ch)",
-   "sources": [
-    "Theographic"
-   ],
-   "scripture": "Scripture names Oholibamah (Genesis 36:5)"
-  },
-  {
-   "claim": "Judith (Gen.26.34) is a parent of Jalam (Gen.36.5-1Ch)",
-   "sources": [
-    "Theographic"
-   ],
-   "scripture": "Scripture names Oholibamah (Genesis 36:5)"
-  },
-  {
-   "claim": "Judith (Gen.26.34) is a parent of Korah (Gen.36.5-1Ch)",
-   "sources": [
-    "Theographic"
-   ],
-   "scripture": "Scripture names Oholibamah (Genesis 36:5)"
+   "scripture": "Shua was the father of Judah's wife (Genesis 38:2). 1 Chronicles 2:3 names Bath-shua as the mother"
   },
   {
    "claim": "Jethro (Exo.2.18-Num) is a parent of Eliasaph (Num.1.14-)",
@@ -408,28 +698,78 @@
    "scripture": "Scripture names Deuel (Numbers 1:14)"
   },
   {
-   "claim": "Tahpenes (1Ki.11.19-) is a parent of Genubath (1Ki.11.20)",
+   "claim": "Ishbah (1Ch.4.17) is a parent of Heber (1Ch.4.18)",
    "sources": [
     "Theographic"
    ],
-   "scripture": "Scripture names sister of Tahpenes (1 Kings 11:20)"
+   "scripture": "Scripture names Mered (1 Chronicles 4:18)"
   },
   {
-   "claim": "Zebidah (2Ki.23.36) is a parent of Jehoahaz (2Ki.23.30-2Ch)",
+   "claim": "Ishbah (1Ch.4.17) is a parent of Jered (1Ch.4.18)",
    "sources": [
     "Theographic"
    ],
-   "scripture": "Scripture names Hamutal (2 Kings 23:31)"
+   "scripture": "Scripture names Mered (1 Chronicles 4:18)"
+  },
+  {
+   "claim": "Ishbah (1Ch.4.17) is a parent of Jekuthiel (1Ch.4.18)",
+   "sources": [
+    "Theographic"
+   ],
+   "scripture": "Scripture names Mered (1 Chronicles 4:18)"
   },
   {
    "claim": "Nacon (2Sa.6.6-1Ch) is a parent of Terah (Gen.11.24-Luk)",
    "sources": [
     "ACAI"
    ],
-   "scripture": "Scripture names Nahor (Luke 3:34)"
+   "scripture": "Scripture names Nahor (Genesis 11:24)"
+  },
+  {
+   "claim": "Jerioth (1Ch.2.18) is a parent of Jesher (1Ch.2.18)",
+   "sources": [
+    "ACAI"
+   ],
+   "scripture": "1 Chronicles 2:18 names them as the sons of Azubah. The Hebrew is hard to follow here, but it doesn't make them Jerioth's"
+  },
+  {
+   "claim": "Jerioth (1Ch.2.18) is a parent of Shobab (1Ch.2.18)",
+   "sources": [
+    "ACAI"
+   ],
+   "scripture": "1 Chronicles 2:18 names them as the sons of Azubah. The Hebrew is hard to follow here, but it doesn't make them Jerioth's"
+  },
+  {
+   "claim": "Jerioth (1Ch.2.18) is a parent of Ardon (1Ch.2.18)",
+   "sources": [
+    "ACAI"
+   ],
+   "scripture": "1 Chronicles 2:18 names them as the sons of Azubah. The Hebrew is hard to follow here, but it doesn't make them Jerioth's"
+  },
+  {
+   "claim": "Aaron (Exo.4.14-Heb) is a parent of Zechariah (Luk.1.5-)",
+   "sources": [
+    "Old BibliaTree"
+   ],
+   "scripture": "Luke 1:5 calls Elizabeth, not Zechariah, a daughter of Aaron"
   }
  ],
  "scripture_differs": [
+  {
+   "person": "Shelah (Gen.10.24-Luk)",
+   "fathers": [
+    {
+     "name": "Cainan",
+     "ref": "Luke 3:35-36",
+     "how": "luke"
+    },
+    {
+     "name": "Arpachshad",
+     "ref": "Genesis 11:12",
+     "how": "pin"
+    }
+   ]
+  },
   {
    "person": "Joseph (Mat.1.16-Jhn)",
    "fathers": [
@@ -441,7 +781,7 @@
     {
      "name": "Heli",
      "ref": "Luke 3:23",
-     "how": "Luke's line"
+     "how": "luke"
     }
    ]
   },
@@ -482,6 +822,34 @@
     "BibleData"
    ],
    "note": "Scripture names Elnathan here (2 Kings 24:8), and the source seems to mean another person of the same name"
+  },
+  {
+   "claim": "Chelub (1Ch.27.26) is a parent of Mehir (1Ch.4.11)",
+   "sources": [
+    "BibleData"
+   ],
+   "note": "Scripture names Chelub here (1 Chronicles 4:11), and the source seems to mean another person of the same name"
+  },
+  {
+   "claim": "Ishi (1Ch.4.20) is a parent of Pelatiah (1Ch.4.42)",
+   "sources": [
+    "BibleData"
+   ],
+   "note": "Scripture names Ishi here (1 Chronicles 4:42), and the source seems to mean another person of the same name"
+  },
+  {
+   "claim": "Ishi (1Ch.4.20) is a parent of Neariah (1Ch.4.42)",
+   "sources": [
+    "BibleData"
+   ],
+   "note": "Scripture names Ishi here (1 Chronicles 4:42), and the source seems to mean another person of the same name"
+  },
+  {
+   "claim": "Ishi (1Ch.4.20) is a parent of Rephaiah (1Ch.4.42)",
+   "sources": [
+    "BibleData"
+   ],
+   "note": "Scripture names Ishi here (1 Chronicles 4:42), and the source seems to mean another person of the same name"
   },
   {
    "claim": "Ishi (1Ch.4.20) is a parent of Uzziel (1Ch.4.42)",
@@ -582,6 +950,13 @@
    "note": "Scripture names Asaph here (1 Chronicles 9:15), and the source seems to mean another person of the same name"
   },
   {
+   "claim": "Azmaveth (1Ch.8.36-) is a parent of Jeziel (1Ch.12.3)",
+   "sources": [
+    "BibleData"
+   ],
+   "note": "Scripture names Azmaveth here (1 Chronicles 12:3), and the source seems to mean another person of the same name"
+  },
+  {
    "claim": "Azmaveth (1Ch.8.36-) is a parent of Pelet (1Ch.12.3)",
    "sources": [
     "BibleData"
@@ -638,6 +1013,13 @@
    "note": "Scripture names Zaccur here (Nehemiah 13:13), and the source seems to mean another person of the same name"
   },
   {
+   "claim": "Eliashib (Neh.3.1-) is a parent of Joiada (Neh.12.10-)",
+   "sources": [
+    "BibleData"
+   ],
+   "note": "Scripture names Eliashib here (Nehemiah 12:10), and the source seems to mean another person of the same name"
+  },
+  {
    "claim": "Hilkiah (2Ki.22.4-Jer) is a parent of Jeremiah (2Ch.35.25-Mat)",
    "sources": [
     "BibleData"
@@ -673,34 +1055,26 @@
    "note": "Scripture names Shelemiah here (Jeremiah 37:3), and the source seems to mean another person of the same name"
   },
   {
+   "claim": "Mary (Mat.1.16-Act) is a parent of James (Mat.10.3-Act)",
+   "sources": [
+    "BibleData"
+   ],
+   "note": "Scripture names Mary here (Matthew 27:56), and the source seems to mean another person of the same name"
+  },
+  {
+   "claim": "Mary (Mat.1.16-Act) is a parent of Joses (Mat.27.56-Mrk)",
+   "sources": [
+    "BibleData",
+    "Theographic"
+   ],
+   "note": "Scripture names Mary here (Matthew 27:56), and the source seems to mean another person of the same name"
+  },
+  {
    "claim": "Neri (Luk.3.27) is a parent of Shealtiel (1Ch.3.17-Mat)",
    "sources": [
     "Old BibliaTree"
    ],
    "note": "Scripture names Jehoiachin here (1 Chronicles 3:17), and the source seems to mean another person of the same name"
-  },
-  {
-   "claim": "Obed (2Ch.23.1) is a parent of Azariah (2Ch.23.1a)",
-   "sources": [
-    "BibleData",
-    "Theographic"
-   ],
-   "note": "Same name as Azariah (2Ch.23.1b), who is the child TIPNR identifies"
-  },
-  {
-   "claim": "Jehallelel (2Ch.29.12) is a parent of Azariah (2Ch.29.12a)",
-   "sources": [
-    "BibleData",
-    "Theographic"
-   ],
-   "note": "Same name as Azariah (2Ch.29.12b), who is the child TIPNR identifies"
-  },
-  {
-   "claim": "Eleadah (1Ch.7.20) is a parent of Tahath (1Ch.7.20a)",
-   "sources": [
-    "BibleData"
-   ],
-   "note": "Same name as Tahath (1Ch.7.20b), who is the child TIPNR identifies"
   },
   {
    "claim": "Haran (1Ch.2.46) is a parent of Gazez (1Ch.2.46a)",
@@ -723,14 +1097,6 @@
     "BibleData"
    ],
    "note": "Same name as Zechariah (Neh.12.35), who is the child TIPNR identifies"
-  },
-  {
-   "claim": "Mary (Mat.1.16-Act) is a parent of Joses (Mat.27.56-Mrk)",
-   "sources": [
-    "BibleData",
-    "Theographic"
-   ],
-   "note": "Same name as Joses (Mat.13.55-Mrk), who is the child TIPNR identifies"
   },
   {
    "claim": "Malchiah (Jer.21.1-) is a parent of Pashhur (Jer.38.1)",
@@ -914,9 +1280,9 @@
    "why": "Scripture's links here don't show son of Abinadab"
   },
   {
-   "person": "Ishhod (1Ch.7.18)",
-   "sentence": "Ishhod was the son of Hammoleketh, who was the sister of Manasseh.",
-   "why": "Scripture's links here don't show son of Hammoleketh"
+   "person": "Ir (1Ch.7.12)",
+   "sentence": "Ir was a son of Bela and descendant of Benjamin.",
+   "why": "Scripture's links here don't show son of Bela"
   },
   {
    "person": "Ishi (1Ch.4.20)",
@@ -1134,11 +1500,6 @@
    "why": "Scripture's links here don't show son of Obadiah"
   },
   {
-   "person": "Zetham (1Ch.23.8-)",
-   "sentence": "Zetham, a son of Laadan, was a Gershonite Levite during the time of David.",
-   "why": "Scripture's links here don't show son of Laadan"
-  },
-  {
    "person": "Zichri (1Ch.8.23)",
    "sentence": "Zichri was a son of Jeroham, a Benjamite, and a descendant of Shaharaim.",
    "why": "Scripture's links here don't show son of Jeroham"
@@ -1149,18 +1510,241 @@
    "why": "Scripture's links here don't show son of Joab"
   }
  ],
- "secondary_count": 355,
- "secondary": [
+ "people_dropped": [
   {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Abdon (1Ch.8.23)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
+   "person": "Unnamed#1",
+   "key": "Unnamed#1@1Ki.2.27",
+   "why": "A priest from the tribe of Levi living at the time of Egypt and Wilderness, inferred from 1Ki.2.27"
   },
+  {
+   "person": "Unnamed#1",
+   "key": "Unnamed#1@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#2",
+   "key": "Unnamed#2@1Ki.2.27",
+   "why": "A priest from the tribe of Levi living at the time of Egypt and Wilderness, inferred from 1Ki.2.27"
+  },
+  {
+   "person": "Unnamed#2",
+   "key": "Unnamed#2@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#3",
+   "key": "Unnamed#3@1Ki.2.27",
+   "why": "A priest from the tribe of Levi living at the time of Egypt and Wilderness, inferred from 1Ki.2.27"
+  },
+  {
+   "person": "Unnamed#3",
+   "key": "Unnamed#3@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#4",
+   "key": "Unnamed#4@1Ki.2.27",
+   "why": "A priest from the tribe of Levi living at the time of Egypt and Wilderness, inferred from 1Ki.2.27"
+  },
+  {
+   "person": "Unnamed#4",
+   "key": "Unnamed#4@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#5",
+   "key": "Unnamed#5@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#6",
+   "key": "Unnamed#6@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#7",
+   "key": "Unnamed#7@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#8",
+   "key": "Unnamed#8@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Unnamed#9",
+   "key": "Unnamed#9@Mat.1.15",
+   "why": "A man from the tribe of Judah living at the time of Exile and Return, inferred from the number of generations in Luke 3"
+  },
+  {
+   "person": "Asen",
+   "key": "Asen@Neh.7.24",
+   "why": "No verse names this person once other people's verses are set aside"
+  },
+  {
+   "person": "father of Barnabas",
+   "key": "father_of_Barnabas@Col.4.10",
+   "why": "TIPNR infers this person at Colossians 4:10, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Conaniah",
+   "key": "father_of_Conaniah@2Ch.31.12",
+   "why": "TIPNR infers this person at 2 Chronicles 31:12, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Elizabeth",
+   "key": "father_of_Elizabeth@Luk.1.5",
+   "why": "TIPNR infers this person at Luke 1:5, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Eunice",
+   "key": "father_of_Eunice@2Ti.1.5",
+   "why": "TIPNR infers this person at 2 Timothy 1:5, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Hilkiah",
+   "key": "father_of_Hilkiah@Jer.32.7",
+   "why": "TIPNR infers this person at Jeremiah 32:7, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Lazarus",
+   "key": "father_of_Lazarus@Luk.10.39",
+   "why": "TIPNR infers this person at Luke 10:39, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Mamre",
+   "key": "father_of_Mamre@Gen.14.13",
+   "why": "TIPNR infers this person at Genesis 14:13, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Nathan",
+   "key": "father_of_Nathan@1Ch.11.38",
+   "why": "TIPNR infers this person at 1 Chronicles 11:38, but the verse doesn't refer to them"
+  },
+  {
+   "person": "father of Tahpenes",
+   "key": "father_of_Tahpenes@1Ki.11.19",
+   "why": "TIPNR infers this person at 1 Kings 11:19, but the verse doesn't refer to them"
+  },
+  {
+   "person": "husband of Hammolecheth",
+   "key": "husband_of_Hammolecheth@1Ch.7.18",
+   "why": "TIPNR infers this person at 1 Chronicles 7:18, but the verse doesn't refer to them"
+  },
+  {
+   "person": "husband of Mary",
+   "key": "husband_of_Mary@Act.12.12",
+   "why": "TIPNR infers this person at Acts 12:12, but the verse doesn't refer to them"
+  },
+  {
+   "person": "husband of Matred",
+   "key": "husband_of_Matred@Gen.36.39",
+   "why": "TIPNR infers this person at Genesis 36:39, but the verse doesn't refer to them"
+  },
+  {
+   "person": "husband of Shimeath",
+   "key": "husband_of_Shimeath@2Ki.12.21",
+   "why": "TIPNR infers this person at 2 Kings 12:21, but the verse doesn't refer to them"
+  },
+  {
+   "person": "wife of Heli",
+   "key": "wife_of_Heli@Luk.1.5",
+   "why": "TIPNR infers this person at Luke 1:5, but the verse doesn't refer to them"
+  },
+  {
+   "person": "a wife of Eliphaz",
+   "key": "a_wife_of_Eliphaz@Gen.36.11-1Ch",
+   "why": "TIPNR infers this person at Genesis 36:11, but the verse doesn't refer to them"
+  },
+  {
+   "person": "a wife of Hezron",
+   "key": "a_wife_of_Hezron@1Ch.2.9",
+   "why": "TIPNR infers this person at 1 Chronicles 2:9, but the verse doesn't refer to them"
+  },
+  {
+   "person": "a wife of Josiah",
+   "key": "a_wife_of_Josiah@1Ch.3.15",
+   "why": "TIPNR infers this person at 1 Chronicles 3:15, but the verse doesn't refer to them"
+  },
+  {
+   "person": "a wife of Simeon",
+   "key": "a_wife_of_Simeon@Gen.46.10",
+   "why": "TIPNR infers this person at Genesis 46:10, but the verse doesn't refer to them"
+  },
+  {
+   "person": "Daughter",
+   "key": "BibleData Daughter_1",
+   "why": "None of BibleData's verses for this person names them"
+  }
+ ],
+ "renamed": [
+  {
+   "person": "Azariahu (2Ch.21.2)",
+   "name": "Azariah",
+   "why": "Azariahu isn't the name in these verses"
+  },
+  {
+   "person": "Egypt (Gen.10.6-1Ch)",
+   "name": "Mizraim",
+   "why": "Egypt isn't the name in these verses"
+  },
+  {
+   "person": "Nebu-sar-sekim (Jer.39.3)",
+   "name": "Sarsechim",
+   "why": "Nebu-sar-sekim isn't the name in these verses"
+  },
+  {
+   "person": "Nergal-sar-ezer (Jer.39.3a)",
+   "name": "Nergal-sharezer",
+   "why": "Nergal-sar-ezer isn't the name in these verses"
+  },
+  {
+   "person": "Nergal-sar-ezer (Jer.39.3b-)",
+   "name": "Nergal-sharezer",
+   "why": "Nergal-sar-ezer isn't the name in these verses"
+  },
+  {
+   "person": "Philistine (Gen.10.14-1Ch)",
+   "name": "Philistim",
+   "why": "Philistine isn't the name in these verses"
+  }
+ ],
+ "merged": [
+  {
+   "person": "Firstborn of Lot",
+   "into": "daughter1 of Lot (Gen.19.37)"
+  },
+  {
+   "person": "Younger of Lot",
+   "into": "daughter2 of Lot (Gen.19.38)"
+  },
+  {
+   "person": "Arba",
+   "into": "Arba (Jos.14.15-)"
+  },
+  {
+   "person": "Bithia",
+   "into": "Bithiah (1Ch.4.18)"
+  },
+  {
+   "person": "Pharaoh",
+   "into": "Pharaoh (1Ch.4.18)"
+  },
+  {
+   "person": "Immanuel",
+   "into": "Jesus (Isa.7.14-Rev)"
+  },
+  {
+   "person": "Eli",
+   "into": "Heli (Luk.3.23)"
+  },
+  {
+   "person": "Eunice",
+   "into": "Eunice (2Ti.1.5)"
+  }
+ ],
+ "secondary_count": 261,
+ "secondary": [
   {
    "claim": "Abiel (1Sa.9.1-1Ch) is a parent of Abdon (1Ch.8.30-)",
    "sources": [
@@ -1271,6 +1855,16 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
+   "claim": "Gilead (Num.26.29-1Ch) is a parent of Abiezer (Num.26.30-Jdg)",
+   "sources": [
+    "ACAI",
+    "BibleData",
+    "TIPNR",
+    "Theographic"
+   ],
+   "basis": "Named in the same passage, but not stated word for word"
+  },
+  {
    "claim": "Abihail (1Ch.5.14) is a parent of Michael (1Ch.5.13)",
    "sources": [
     "ACAI",
@@ -1334,6 +1928,15 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
+   "claim": "Ahinoam (1Sa.14.50) is a parent of Abinadab (1Sa.14.49-1Ch)",
+   "sources": [
+    "ACAI",
+    "TIPNR",
+    "Theographic"
+   ],
+   "basis": "Named in the same passage, but not stated word for word"
+  },
+  {
    "claim": "Abital (2Sa.3.4-1Ch) and David (Rut.4.17-Rev) were married",
    "sources": [
     "ACAI",
@@ -1358,16 +1961,6 @@
    "sources": [
     "ACAI",
     "Old BibliaTree",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Adalia (Est.9.8)",
-   "sources": [
-    "ACAI",
-    "BibleData",
     "TIPNR",
     "Theographic"
    ],
@@ -1448,22 +2041,43 @@
    "basis": "Scripture doesn't state it word for word"
   },
   {
-   "claim": "a wife of Jerahmeel (1Ch.2.26) is a parent of Ahijah (1Ch.2.25)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Ehud (Jdg.3.15-1Ch) is a parent of Ahijah (1Ch.8.7)",
    "sources": [
     "ACAI",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Beriah (1Ch.8.13-) is a parent of Ahio (1Ch.8.14)",
+   "claim": "Ahinoam (1Sa.14.50) is a parent of Jonathan (1Sa.13.2-1Ch)",
+   "sources": [
+    "ACAI",
+    "TIPNR",
+    "Theographic"
+   ],
+   "basis": "Named in the same passage, but not stated word for word"
+  },
+  {
+   "claim": "Ahinoam (1Sa.14.50) is a parent of Malchi-shua (1Sa.14.49-1Ch)",
+   "sources": [
+    "ACAI",
+    "TIPNR",
+    "Theographic"
+   ],
+   "basis": "Named in the same passage, but not stated word for word"
+  },
+  {
+   "claim": "Ahinoam (1Sa.14.50) is a parent of Merab (1Sa.14.49-2Sa)",
+   "sources": [
+    "ACAI",
+    "TIPNR",
+    "Theographic"
+   ],
+   "basis": "Named in the same passage, but not stated word for word"
+  },
+  {
+   "claim": "Ahinoam (1Sa.14.50) is a parent of Michal (1Sa.14.49-1Ch)",
    "sources": [
     "ACAI",
     "TIPNR",
@@ -1519,6 +2133,7 @@
    "claim": "Alphaeus (Mat.10.3-Act) is a parent of James (Mat.10.3-Act)",
    "sources": [
     "ACAI",
+    "BibleData",
     "TIPNR"
    ],
    "basis": "Named in the same passage, but not stated word for word"
@@ -1581,54 +2196,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Anthothijah (1Ch.8.24)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Beriah (1Ch.8.13-) is a parent of Arad (1Ch.8.15)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Aridai (Est.9.9)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Aridatha (Est.9.8)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Arisai (Est.9.9)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Asa (1Ki.15.8-Mat) and Azubah (1Ki.22.42-2Ch) were married",
    "sources": [
     "ACAI",
@@ -1636,13 +2203,6 @@
     "Theographic"
    ],
    "basis": "Scripture doesn't state it word for word"
-  },
-  {
-   "claim": "husband of Zeruiah (1Sa.26.6) is a parent of Asahel (2Sa.2.18-1Ch)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
   },
   {
    "claim": "Ashhur (1Ch.2.24-) is a parent of Hepher (1Ch.4.6)",
@@ -1689,7 +2249,8 @@
    "sources": [
     "ACAI",
     "BibleData",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -1707,25 +2268,6 @@
    "claim": "Ashhur (1Ch.2.24-) is a parent of Koz (1Ch.4.8)",
    "sources": [
     "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Aspatha (Est.9.7)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Jeroham (1Ch.8.27) is a parent of Athaliah (1Ch.8.26)",
-   "sources": [
-    "ACAI",
-    "BibleData",
     "TIPNR",
     "Theographic"
    ],
@@ -1764,25 +2306,6 @@
    "claim": "Maacah (1Ch.8.29-) is a parent of Baal (1Ch.8.30-)",
    "sources": [
     "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "a wife of Solomon (1Ki.4.11) is a parent of Basemath (1Ki.4.15)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Lot (Gen.11.27-2Pe) is a parent of Ben-ammi (Gen.19.38)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "Old BibliaTree",
     "TIPNR",
     "Theographic"
    ],
@@ -1870,43 +2393,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Beriah (1Ch.8.13-) is a parent of Shashak (1Ch.8.14-)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Beriah (1Ch.8.13-) is a parent of Jeremoth (1Ch.8.14)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Beriah (1Ch.8.13-) is a parent of Zebadiah (1Ch.8.15)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Beriah (1Ch.8.13-) is a parent of Eder (1Ch.8.15)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Bithiah (1Ch.4.18) is a parent of Shammai (1Ch.4.17)",
    "sources": [
     "ACAI",
@@ -1921,13 +2407,6 @@
     "ACAI",
     "TIPNR",
     "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "a wife of Jerahmeel (1Ch.2.26) is a parent of Bunah (1Ch.2.25)",
-   "sources": [
-    "TIPNR"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -2036,16 +2515,6 @@
    "basis": "Scripture doesn't state it word for word"
   },
   {
-   "claim": "Haman (Est.3.1-) is a parent of Dalphon (Est.9.7)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "David (Rut.4.17-Rev) is a parent of Shephatiah (2Sa.3.4-1Ch)",
    "sources": [
     "ACAI",
@@ -2067,92 +2536,6 @@
   },
   {
    "claim": "David (Rut.4.17-Rev) is a parent of Shobab (2Sa.5.14-1Ch)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Ibhar (2Sa.5.15-1Ch)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Elishua (2Sa.5.15-1Ch)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Nepheg (2Sa.5.15-1Ch)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Japhia (2Sa.5.15-1Ch)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Elishama (2Sa.5.16-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Eliada (2Sa.5.16-1Ch)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Eliphelet (2Sa.5.16-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Elpelet (1Ch.3.6-)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "David (Rut.4.17-Rev) is a parent of Nogah (1Ch.3.7-)",
    "sources": [
     "ACAI",
     "BibleData",
@@ -2192,16 +2575,6 @@
    "basis": "Scripture doesn't state it word for word"
   },
   {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Eber (1Ch.8.22)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Ehud (Jdg.3.15-1Ch) is a parent of Naaman (1Ch.8.7)",
    "sources": [
     "ACAI",
@@ -2229,16 +2602,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Elam (1Ch.8.24)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Ephraim (Gen.41.52-Zec) is a parent of Elead (1Ch.7.21)",
    "sources": [
     "BibleData",
@@ -2248,45 +2611,11 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Unnamed#4 (1Ki.2.27) is a parent of Eli (1Sa.1.3-1Ki)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Meshelemiah (1Ch.9.21-) is a parent of Eliehoenai (1Ch.26.3)",
    "sources": [
     "ACAI",
     "TIPNR",
     "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shimei (1Ch.8.21) is a parent of Eliel (1Ch.8.20)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Eliel (1Ch.8.22)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shimei (1Ch.8.21) is a parent of Elienai (1Ch.8.20)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -2309,13 +2638,6 @@
     "Theographic"
    ],
    "basis": "Scripture doesn't name them together"
-  },
-  {
-   "claim": "Eliphaz (Gen.36.4-1Ch) and a wife of Eliphaz (Gen.36.11-1Ch) were married",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Scripture doesn't state it word for word"
   },
   {
    "claim": "Elishama (Num.1.10-1Ch) is a parent of Nun (Exo.33.11-Neh)",
@@ -2349,45 +2671,6 @@
   },
   {
    "claim": "Elpaal (1Ch.8.11-) is a parent of Shema (1Ch.8.13)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Elpaal (1Ch.8.11-) is a parent of Zebadiah (1Ch.8.17)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Elpaal (1Ch.8.11-) is a parent of Meshullam (1Ch.8.17)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Elpaal (1Ch.8.11-) is a parent of Hizki (1Ch.8.17)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Elpaal (1Ch.8.11-) is a parent of Heber (1Ch.8.17)",
    "sources": [
     "ACAI",
     "BibleData",
@@ -2510,15 +2793,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Rapha (2Sa.21.16-1Ch) is a parent of Goliath (1Sa.17.4-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Gomer (Hos.1.3) is a parent of Jezreel (Hos.1.4)",
    "sources": [
     "ACAI",
@@ -2568,45 +2842,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Haman (Est.3.1-) is a parent of Parshandatha (Est.9.7)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Poratha (Est.9.8)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Parmashta (Est.9.9)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Haman (Est.3.1-) is a parent of Vaizatha (Est.9.9)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Machir (Gen.50.23-1Ch) is a parent of Hammolecheth (1Ch.7.18)",
    "sources": [
     "ACAI",
@@ -2625,29 +2860,9 @@
    "basis": "Scripture doesn't state it word for word"
   },
   {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Hanan (1Ch.8.23)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Jonathan (Neh.12.35) is a parent of Hanani (Neh.12.36)",
    "sources": [
     "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Hananiah (1Ch.8.24)",
-   "sources": [
-    "ACAI",
-    "BibleData",
     "TIPNR",
     "Theographic"
    ],
@@ -2694,13 +2909,6 @@
    "basis": "Scripture doesn't name them together"
   },
   {
-   "claim": "Heli (Luk.3.23) and wife of Heli (Luk.1.5) were married",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Scripture doesn't state it word for word"
-  },
-  {
    "claim": "Hephzibah (2Ki.21.1) and Hezekiah (2Ki.16.20-Mat) were married",
    "sources": [
     "ACAI",
@@ -2739,14 +2947,6 @@
    "basis": "Scripture doesn't name them together"
   },
   {
-   "claim": "father of Hilkiah (Jer.32.7) is a parent of Hilkiah (Jer.1.1)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Hodesh (1Ch.8.9) is a parent of Jeuz (1Ch.8.10)",
    "sources": [
     "ACAI",
@@ -2761,7 +2961,8 @@
    "sources": [
     "ACAI",
     "BibleData",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -2842,25 +3043,6 @@
    "basis": "Scripture doesn't name them together"
   },
   {
-   "claim": "Rapha (2Sa.21.16-1Ch) is a parent of Ishbi-benob (2Sa.21.16)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Ishpan (1Ch.8.22)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Obed-edom (2Sa.6.10-2Ch) is a parent of Issachar (1Ch.26.5)",
    "sources": [
     "ACAI",
@@ -2876,15 +3058,6 @@
     "ACAI",
     "BibleData",
     "Old BibliaTree",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shimei (1Ch.8.21) is a parent of Jakim (1Ch.8.19)",
-   "sources": [
-    "ACAI",
     "TIPNR",
     "Theographic"
    ],
@@ -2948,7 +3121,8 @@
    "claim": "Tobiah (Neh.2.10-) is a parent of Jehohanan (Neh.6.18)",
    "sources": [
     "ACAI",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -2980,20 +3154,9 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Jeroham (1Ch.8.27) is a parent of Shamsherai (1Ch.8.26)",
+   "claim": "Jephunneh (Num.13.6-1Ch) is a parent of Kenaz (Num.32.12-1Ch)",
    "sources": [
     "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Jeroham (1Ch.8.27) is a parent of Shehariah (1Ch.8.26)",
-   "sources": [
-    "ACAI",
-    "BibleData",
     "TIPNR",
     "Theographic"
    ],
@@ -3192,14 +3355,6 @@
    "basis": "Scripture doesn't state it word for word"
   },
   {
-   "claim": "Josiah (1Ki.13.2-Mat) and a wife of Josiah (1Ch.3.15) were married",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Scripture doesn't state it word for word"
-  },
-  {
    "claim": "Lamech (Gen.4.18-) is a parent of Jubal (Gen.4.21)",
    "sources": [
     "ACAI",
@@ -3250,23 +3405,9 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "a wife of Eliphaz (Gen.36.11-1Ch) is a parent of Korah (Gen.36.16)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Tahan (1Ch.7.25) is a parent of Ladan (1Ch.7.26)",
    "sources": [
     "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Rapha (2Sa.21.16-1Ch) is a parent of Lahmi (2Sa.21.16-1Ch)",
-   "sources": [
     "TIPNR",
     "Theographic"
    ],
@@ -3287,49 +3428,6 @@
    "claim": "Lamech (Gen.4.18-) is a parent of Naamah (Gen.4.22)",
    "sources": [
     "ACAI",
-    "BibleData",
-    "Old BibliaTree",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "father of Lazarus (Luk.10.39) is a parent of Lazarus (Jhn.11.1-)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Lois (2Ti.1.5) and father of Eunice (2Ti.1.5) were married",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Scripture doesn't state it word for word"
-  },
-  {
-   "claim": "Lot (Gen.11.27-2Pe) is a parent of daughter1 of Lot (Gen.19.37)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Lot (Gen.11.27-2Pe) is a parent of daughter2 of Lot (Gen.19.38)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Lot (Gen.11.27-2Pe) is a parent of Moab (Gen.19.37a)",
-   "sources": [
     "BibleData",
     "Old BibliaTree",
     "TIPNR",
@@ -3460,7 +3558,8 @@
    "sources": [
     "ACAI",
     "BibleData",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -3491,37 +3590,6 @@
     "Old BibliaTree",
     "TIPNR",
     "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "father of Lazarus (Luk.10.39) is a parent of Martha (Luk.10.38-Jhn)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "father of Barnabas (Col.4.10) is a parent of Mary (Act.12.12)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Mary (Act.12.12) and husband of Mary (Act.12.12) were married",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Scripture doesn't state it word for word"
-  },
-  {
-   "claim": "wife of Heli (Luk.1.5) is a parent of Mary (Mat.1.16-Act)",
-   "sources": [
-    "TIPNR"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -3569,6 +3637,7 @@
    "claim": "Milcah (Gen.11.29-) is a parent of Uz (Gen.22.21)",
    "sources": [
     "ACAI",
+    "BibleData",
     "TIPNR",
     "Theographic"
    ],
@@ -3619,7 +3688,8 @@
    "sources": [
     "ACAI",
     "BibleData",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -3644,33 +3714,11 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "a wife of Jerahmeel (1Ch.2.26) is a parent of Oren (1Ch.2.25)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "a wife of Jerahmeel (1Ch.2.26) is a parent of Ozem (1Ch.2.25)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Peter (Mat.4.18-2Pe) and a wife of Peter (Mat.8.14-1Co) were married",
    "sources": [
     "TIPNR"
    ],
    "basis": "Scripture doesn't state it word for word"
-  },
-  {
-   "claim": "Philip (Mat.14.3-Luk) is a parent of Salome (Mat.14.6)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
   },
   {
    "claim": "Pyrrhus (Act.20.4) is a parent of Sopater (Act.20.4-Rom)",
@@ -3682,27 +3730,12 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "a wife of Jerahmeel (1Ch.2.26) is a parent of Ram (1Ch.2.25-)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Rapha (2Sa.21.16-1Ch) is a parent of Saph (2Sa.21.18-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Rehoboam (1Ki.11.43-Mat) is a parent of Shemariah (2Ch.11.19)",
    "sources": [
     "ACAI",
     "BibleData",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -3741,7 +3774,8 @@
    "sources": [
     "ACAI",
     "BibleData",
-    "TIPNR"
+    "TIPNR",
+    "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
   },
@@ -3809,16 +3843,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Shashak (1Ch.8.14-) is a parent of Zichri (1Ch.8.23)",
-   "sources": [
-    "ACAI",
-    "BibleData",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Uzzah (1Ch.6.29) is a parent of Shimea (1Ch.6.30)",
    "sources": [
     "ACAI",
@@ -3827,48 +3851,6 @@
     "Theographic"
    ],
    "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shimeath (2Ki.12.21-2Ch) and husband of Shimeath (2Ki.12.21) were married",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Scripture doesn't state it word for word"
-  },
-  {
-   "claim": "Shimei (1Ch.8.21) is a parent of Zichri (1Ch.8.19)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shimei (1Ch.8.21) is a parent of Zabdi (1Ch.8.19)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shimei (1Ch.8.21) is a parent of Zillethai (1Ch.8.20)",
-   "sources": [
-    "ACAI",
-    "TIPNR",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Simeon (Gen.29.33-Rev) and a wife of Simeon (Gen.46.10) were married",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Scripture doesn't state it word for word"
   },
   {
    "claim": "Solomon (2Sa.5.14-Act) and daughter of Pharaoh (1Ki.3.1) were married",
@@ -3881,13 +3863,6 @@
    "claim": "Tahath (1Ch.7.20b) is a parent of Zabad (1Ch.7.21)",
    "sources": [
     "ACAI",
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Tahpenes (1Ki.11.19-) is a parent of daughter of Pharaoh (1Ki.3.1)",
-   "sources": [
     "TIPNR"
    ],
    "basis": "Named in the same passage, but not stated word for word"
@@ -3917,27 +3892,6 @@
    "basis": "Scripture doesn't state it word for word"
   },
   {
-   "claim": "Unnamed#1 (1Ki.2.27) is a parent of Unnamed#2 (1Ki.2.27)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Unnamed#2 (1Ki.2.27) is a parent of Unnamed#3 (1Ki.2.27)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Unnamed#3 (1Ki.2.27) is a parent of Unnamed#4 (1Ki.2.27)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "daughter of Sanballat (Neh.13.28) and son of Joiada (Neh.13.28) were married",
    "sources": [
     "ACAI",
@@ -3946,49 +3900,7 @@
    "basis": "Scripture doesn't state it word for word"
   },
   {
-   "claim": "a wife of Lot (Gen.19.15-) is a parent of daughter1 of Lot (Gen.19.37)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "a wife of Lot (Gen.19.15-) is a parent of daughter2 of Lot (Gen.19.38)",
-   "sources": [
-    "TIPNR"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Abinadab (1Ki.4.11) and Taphath (1Ki.4.11) were married",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Scripture doesn't state it word for word"
-  },
-  {
    "claim": "Machir (Gen.50.23-1Ch) is a parent of Abiah (1Ch.2.24)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Ishi (1Ch.4.20) is a parent of Pelatiah (1Ch.4.42)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Ishi (1Ch.4.20) is a parent of Neariah (1Ch.4.42)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Ishi (1Ch.4.20) is a parent of Rephaiah (1Ch.4.42)",
    "sources": [
     "BibleData"
    ],
@@ -4010,13 +3922,6 @@
   },
   {
    "claim": "Jeshishai (1Ch.5.14) is a parent of Michael (1Ch.5.13)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Bela (Gen.46.21-1Ch) is a parent of Ir (1Ch.7.12)",
    "sources": [
     "BibleData"
    ],
@@ -4065,83 +3970,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Elpaal (1Ch.8.11-) is a parent of Ahio (1Ch.8.14)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Elpaal (1Ch.8.11-) is a parent of Shashak (1Ch.8.14-)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Elpaal (1Ch.8.11-) is a parent of Jeroham (1Ch.8.27)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Jakim (1Ch.8.19)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Zichri (1Ch.8.19)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Zabdi (1Ch.8.19)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Eliel (1Ch.8.20)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Zillethai (1Ch.8.20)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Adaiah (1Ch.8.21)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Beraiah (1Ch.8.21)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Shema (1Ch.8.13) is a parent of Shimei (1Ch.8.21)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Levi (Gen.29.34-Rev) is a parent of Miniamin (2Ch.31.15)",
    "sources": [
     "BibleData"
@@ -4184,7 +4012,7 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Azariah (Neh.7.7-) is a parent of Meraiah (Neh.12.12)",
+   "claim": "Seraiah (Ezr.2.2-Neh) is a parent of Meraiah (Neh.12.12)",
    "sources": [
     "BibleData"
    ],
@@ -4289,21 +4117,6 @@
    "basis": "Named in the same passage, but not stated word for word"
   },
   {
-   "claim": "Eliashib (Neh.3.1-) is a parent of son of Joiada (Neh.13.28)",
-   "sources": [
-    "BibleData"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
-   "claim": "Mary (Mat.1.16-Act) is a parent of Joses (Mat.27.56-Mrk)",
-   "sources": [
-    "BibleData",
-    "Theographic"
-   ],
-   "basis": "Named in the same passage, but not stated word for word"
-  },
-  {
    "claim": "Alphaeus (Mat.10.3-Act) is a parent of Judas (Mat.10.3-Act)",
    "sources": [
     "ACAI",
@@ -4330,15 +4143,6 @@
    ],
    "level": "together",
    "why": "The source itself marks this as uncertain"
-  },
-  {
-   "claim": "Ahinoam (1Sa.14.50) is a parent of Abinadab (1Sa.14.49-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
   },
   {
    "claim": "Nahash (2Sa.17.25) is a parent of Abinadab (1Sa.16.8-1Ch)",
@@ -4387,42 +4191,6 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Ahinoam (1Sa.14.50) is a parent of Jonathan (1Sa.13.2-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Ahinoam (1Sa.14.50) is a parent of Malchi-shua (1Sa.14.49-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Ahinoam (1Sa.14.50) is a parent of Merab (1Sa.14.49-2Sa)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Ahinoam (1Sa.14.50) is a parent of Michal (1Sa.14.49-1Ch)",
-   "sources": [
-    "ACAI",
-    "TIPNR"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
    "claim": "Ahinoam (1Sa.14.50) is a parent of Ish-bosheth (2Sa.2.8-1Ch)",
    "sources": [
     "ACAI",
@@ -4450,7 +4218,6 @@
   {
    "claim": "Alphaeus (Mat.10.3-Act) is a parent of Matthew (Mat.9.9-Act)",
    "sources": [
-    "BibleData",
     "TIPNR",
     "Theographic"
    ],
@@ -4510,6 +4277,15 @@
    ],
    "level": "none",
    "why": "The source itself marks this as uncertain"
+  },
+  {
+   "claim": "a wife of Solomon (1Ki.4.11) is a parent of Basemath (1Ki.4.15)",
+   "sources": [
+    "ACAI",
+    "TIPNR"
+   ],
+   "level": "together",
+   "why": "No verse refers to both of them"
   },
   {
    "claim": "Bithiah (1Ch.4.18) is a parent of Miriam (1Ch.4.17)",
@@ -4747,14 +4523,6 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Ithamar (Exo.6.23-Ezr) is a parent of Unnamed#1 (1Ki.2.27)",
-   "sources": [
-    "TIPNR"
-   ],
-   "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
    "claim": "Koz (1Ch.4.8) is a parent of Jabez (1Ch.4.9-)",
    "sources": [
     "ACAI",
@@ -4876,7 +4644,7 @@
     "TIPNR"
    ],
    "level": "together",
-   "why": "The source itself marks this as uncertain"
+   "why": "No verse refers to both of them"
   },
   {
    "claim": "Maacah (2Sa.3.3-1Ch) is a parent of Tamar (2Sa.13.1-1Ch)",
@@ -4987,12 +4755,12 @@
    "why": "The source itself marks this as uncertain"
   },
   {
-   "claim": "wife of Heli (Luk.1.5) is a parent of Salome (Mat.20.20-Mrk)",
+   "claim": "Tahpenes (1Ki.11.19-) is a parent of daughter of Pharaoh (1Ki.3.1)",
    "sources": [
     "TIPNR"
    ],
    "level": "together",
-   "why": "The source itself marks this as uncertain"
+   "why": "No verse refers to both of them"
   },
   {
    "claim": "Zeresh (Est.5.10-) is a parent of Vaizatha (Est.9.9)",
@@ -5013,6 +4781,14 @@
   },
   {
    "claim": "Adah (Gen.26.34-) is a parent of Jubal (Gen.4.21)",
+   "sources": [
+    "BibleData"
+   ],
+   "level": "none",
+   "why": "Only one source, and Scripture doesn't support it"
+  },
+  {
+   "claim": "Shobal (Gen.36.20-1Ch) is a parent of Beeri (Gen.26.34)",
    "sources": [
     "BibleData"
    ],
@@ -5044,23 +4820,7 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Shishak (1Ki.11.40-2Ch) and Tahpenes (1Ki.11.19-) were married",
-   "sources": [
-    "BibleData"
-   ],
-   "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
    "claim": "Shemaiah (1Ch.3.22) is a parent of Hattush (Ezr.8.2)",
-   "sources": [
-    "BibleData"
-   ],
-   "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Chelub (1Ch.27.26) is a parent of Mehir (1Ch.4.11)",
    "sources": [
     "BibleData"
    ],
@@ -5140,6 +4900,14 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
+   "claim": "Ehud (1Ch.7.10) is a parent of Ahijah (1Ch.8.7)",
+   "sources": [
+    "BibleData"
+   ],
+   "level": "none",
+   "why": "Only one source, and Scripture doesn't support it"
+  },
+  {
    "claim": "Ehud (1Ch.7.10) is a parent of Gera (1Ch.8.7)",
    "sources": [
     "BibleData"
@@ -5180,14 +4948,6 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Azmaveth (1Ch.8.36-) is a parent of Jeziel (1Ch.12.3)",
-   "sources": [
-    "BibleData"
-   ],
-   "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
    "claim": "Libni (Exo.6.17-1Ch) is a parent of Jehiel (1Ch.15.18-)",
    "sources": [
     "BibleData"
@@ -5196,31 +4956,15 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Shallum (1Ch.9.17-Neh) is a parent of Jediael (1Ch.26.2)",
-   "sources": [
-    "BibleData"
-   ],
-   "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Shallum (1Ch.9.17-Neh) is a parent of Zebadiah (1Ch.26.2)",
-   "sources": [
-    "BibleData"
-   ],
-   "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Shallum (1Ch.9.17-Neh) is a parent of Jathniel (1Ch.26.2)",
-   "sources": [
-    "BibleData"
-   ],
-   "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
    "claim": "Shallum (1Ch.9.17-Neh) is a parent of Elam (1Ch.26.3)",
+   "sources": [
+    "BibleData"
+   ],
+   "level": "none",
+   "why": "Only one source, and Scripture doesn't support it"
+  },
+  {
+   "claim": "Shallum (1Ch.9.17-Neh) is a parent of Jehohanan (1Ch.26.3)",
    "sources": [
     "BibleData"
    ],
@@ -5348,19 +5092,19 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Mary (Mat.1.16-Act) is a parent of James (Mat.10.3-Act)",
-   "sources": [
-    "BibleData"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
    "claim": "Simon (Mat.27.32-Luk) is a parent of Rufus (Rom.16.13)",
    "sources": [
     "BibleData"
    ],
    "level": "none",
+   "why": "Only one source, and Scripture doesn't support it"
+  },
+  {
+   "claim": "Abihail (2Ch.11.18) is a parent of Shemariah (2Ch.11.19)",
+   "sources": [
+    "Theographic"
+   ],
+   "level": "together",
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
@@ -5380,11 +5124,11 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Israel (Gen.25.26-Rev) is a parent of Adam (Gen.2.19-Jud)",
+   "claim": "Haggai (Ezr.5.1-Hag) is a parent of Adam (Gen.2.19-Jud)",
    "sources": [
     "Theographic"
    ],
-   "level": "together",
+   "level": "none",
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
@@ -5404,6 +5148,14 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
+   "claim": "daughter1 of Lot (Gen.19.37) is a parent of Ben-ammi (Gen.19.38)",
+   "sources": [
+    "Theographic"
+   ],
+   "level": "together",
+   "why": "No verse refers to both of them"
+  },
+  {
    "claim": "Caleb (1Ch.2.9-) is a parent of Jahdai (1Ch.2.47)",
    "sources": [
     "Theographic"
@@ -5412,19 +5164,11 @@
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
-   "claim": "Israel (Gen.25.26-Rev) is a parent of Eve (Gen.3.20-1Ti)",
+   "claim": "Haggai (Ezr.5.1-Hag) is a parent of Eve (Gen.3.20-1Ti)",
    "sources": [
     "Theographic"
    ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Ishbah (1Ch.4.17) is a parent of Heber (1Ch.4.18)",
-   "sources": [
-    "Theographic"
-   ],
-   "level": "together",
+   "level": "none",
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
@@ -5441,30 +5185,6 @@
     "Theographic"
    ],
    "level": "none",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Ben-hur (1Ki.4.8) is a parent of Hur (1Ki.4.8)",
-   "sources": [
-    "Theographic"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Ishbah (1Ch.4.17) is a parent of Jered (1Ch.4.18)",
-   "sources": [
-    "Theographic"
-   ],
-   "level": "together",
-   "why": "Only one source, and Scripture doesn't support it"
-  },
-  {
-   "claim": "Ishbah (1Ch.4.17) is a parent of Jekuthiel (1Ch.4.18)",
-   "sources": [
-    "Theographic"
-   ],
-   "level": "together",
    "why": "Only one source, and Scripture doesn't support it"
   },
   {
