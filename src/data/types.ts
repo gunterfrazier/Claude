@@ -33,8 +33,10 @@ export interface ParentLink {
   /** Names of the generations in between, oldest first. */
   via?: string[];
   note?: string;
-  /** The link rests on tradition or interpretation rather than an explicit statement. */
+  /** Scripture doesn't state the link word for word. A named open source supports it, and nothing in the text contradicts it. */
   tradition?: boolean;
+  /** A verse states the relationship directly. */
+  explicit?: boolean;
 }
 
 export interface FigureDates {
@@ -60,9 +62,11 @@ export interface Figure {
   /** Scripture gives no (or only a minimal) genealogy for this figure. */
   unrecordedGenealogy?: boolean;
   genealogyNote?: string;
-  /** Approximate dates on a traditional chronology. */
+  /** Approximate dates from one named chronology (Floyd Nolen Jones, via Theographic). Scripture gives no calendar dates. */
   dates?: FigureDates;
-  /** Years after creation, from the ages in Genesis 5 and 11. */
+  /** Scripture leaves this person unnamed, as with Lot's wife. */
+  unnamed?: boolean;
+  /** Years after creation, from the ages Scripture gives. */
   am?: { from: number; to: number };
   places?: string[];
   parents: string[];

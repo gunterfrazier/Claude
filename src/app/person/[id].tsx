@@ -168,8 +168,8 @@ export default function PersonScreen() {
         {pane === "BIO" ? (
           <>
             <View>
-              <SectionLabel>Biblical Biography</SectionLabel>
-              <LinkedText text={person.bio} style={styles.bio} />
+              <SectionLabel>Summary</SectionLabel>
+              <LinkedText text={person.bio || person.title} style={styles.bio} />
             </View>
 
             {person.places?.length ? (

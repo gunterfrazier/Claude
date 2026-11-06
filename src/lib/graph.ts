@@ -1,3 +1,4 @@
+import aliases from "@/data/figure-aliases.json";
 import { FIGURES } from "@/data/figures";
 import type { Figure, ParentLink } from "@/data/types";
 
@@ -40,12 +41,15 @@ export const figuresByName: readonly Figure[] = [...graph.list].sort((a, b) => a
 
 export const DEFAULT_FIGURE_ID = "david";
 
+/** Old ids that now point to another record, so saved figures and notes still open. */
+const ALIASES = aliases as Record<string, string>;
+
 export function getFigure(id: string | undefined | null): Figure | undefined {
-  return id ? graph.map.get(id) : undefined;
+  return id ? graph.map.get(id) ?? graph.map.get(ALIASES[id]) : undefined;
 }
 
 export function hasFigure(id: string): boolean {
-  return graph.map.has(id);
+  return graph.map.has(id) || graph.map.has(ALIASES[id]);
 }
 
 /** Resolves ids to figures, silently skipping ids with no record. */

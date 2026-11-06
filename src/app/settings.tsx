@@ -66,15 +66,12 @@ export default function SettingsScreen() {
       <Card style={{ gap: 8 }}>
         <SectionLabel>About the data</SectionLabel>
         <Text style={styles.body}>
-          {allFigures.length} figures and {REF_COUNT} scripture references. Each relationship cites its source; links that skip
-          generations (such as Luke’s list between Nathan and Neri) record how many generations they span, and links that rest on
-          tradition rather than an explicit statement are marked.
+          {allFigures.length} people. Every family claim from the sources below was tested against the tagged Hebrew and Greek text, and the Bible decides: what it states is kept with its verse, what it contradicts is dropped, and what it doesn’t address is kept only if open sources support it, and is marked as not stated word for word. Where Scripture itself names two fathers, as with Joseph in Matthew 1 and Luke 3, both are shown.
         </Text>
         <Text style={styles.body}>
-          Dates are approximate and follow a traditional chronology (the Exodus c. 1446 BC and Edwin Thiele’s dates for the
-          kings). The years before Abraham are counted from creation using the ages in Genesis 5 and 11. Scholars date many events
-          differently.
+          Scripture gives no calendar dates, so BC and AD dates are approximate and follow one chronology (Floyd Nolen Jones, via Theographic). Scholars date many events differently. Years from creation come from the ages Scripture gives, through BibleData’s reckoning. Summaries are written by STEPBible and are secondary to the verses.
         </Text>
+        <Text style={styles.small}>People and summaries: TIPNR by STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). More people and family claims: BibleData by Brady Stephenson (CC BY 4.0). Cross-checks and dates: Theographic Bible Metadata by Robert Rouse (CC BY-SA 4.0). Cross-checks: ACAI by Mission Mutual (CC BY-SA 4.0).</Text>
         <Text style={styles.small}>Bible texts: scrollmapper/bible_databases on GitHub.</Text>
       </Card>
 

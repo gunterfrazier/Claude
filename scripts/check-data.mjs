@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Validates src/data/figures.ts against itself and against the bundled Bible text.
+ * Validates src/data/figures.json against itself and against the bundled Bible text.
  *
  *   npm run data:check            # errors fail the run; warnings are listed
  *   npm run data:check -- --quiet # summary only
@@ -15,7 +15,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const { FIGURES } = await import(path.join(root, "src/data/figures.ts"));
+const FIGURES = JSON.parse(fs.readFileSync(path.join(root, "src/data/figures.json"), "utf8"));
 const { parseReference, formatSegment } = await import(path.join(root, "src/lib/references.ts"));
 const quiet = process.argv.includes("--quiet");
 
