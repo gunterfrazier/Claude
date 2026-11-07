@@ -75,7 +75,7 @@
   "scripture_differs": 3,
   "cycles": 0,
   "ids_kept_from_previous": true,
-  "people_final": 3129,
+  "people_final": 3128,
   "messianic_line": 150,
   "bio_sentences_removed": 77,
   "dates_overridden": 3
@@ -1733,6 +1733,11 @@
   {
    "person": "Immanuel",
    "into": "Jesus (Isa.7.14-Rev)"
+  },
+  {
+   "person": "Talitha",
+   "into": "Daughter of Jairus",
+   "why": "Talitha is Aramaic for \"little girl\", as Mark 5:41 itself translates it, not her name"
   },
   {
    "person": "Eli",
