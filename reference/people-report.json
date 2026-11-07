@@ -1748,6 +1748,83 @@
    "into": "Eunice (2Ti.1.5)"
   }
  ],
+ "eponyms": [
+  {
+   "person": "Jacob",
+   "kept": 220,
+   "people_verses": 2356
+  },
+  {
+   "person": "Reuben",
+   "kept": 17,
+   "people_verses": 68
+  },
+  {
+   "person": "Simeon",
+   "kept": 12,
+   "people_verses": 31
+  },
+  {
+   "person": "Levi",
+   "kept": 16,
+   "people_verses": 312
+  },
+  {
+   "person": "Judah",
+   "kept": 34,
+   "people_verses": 986
+  },
+  {
+   "person": "Dan",
+   "kept": 5,
+   "people_verses": 1
+  },
+  {
+   "person": "Naphtali",
+   "kept": 5,
+   "people_verses": 45
+  },
+  {
+   "person": "Gad",
+   "kept": 5,
+   "people_verses": 50
+  },
+  {
+   "person": "Asher",
+   "kept": 6,
+   "people_verses": 38
+  },
+  {
+   "person": "Issachar",
+   "kept": 5,
+   "people_verses": 35
+  },
+  {
+   "person": "Zebulun",
+   "kept": 5,
+   "people_verses": 43
+  },
+  {
+   "person": "Joseph",
+   "kept": 148,
+   "people_verses": 49
+  },
+  {
+   "person": "Benjamin",
+   "kept": 18,
+   "people_verses": 148
+  },
+  {
+   "person": "Ephraim",
+   "kept": 9,
+   "people_verses": 150
+  },
+  {
+   "person": "Manasseh",
+   "kept": 16,
+   "people_verses": 96
+  }
+ ],
  "secondary_count": 261,
  "secondary": [
   {
