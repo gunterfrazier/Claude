@@ -25,7 +25,9 @@ What was changed:
 
 - Records for the same person were matched across the four datasets.
 - Every family claim was tested against the Hebrew and Greek text, tagged word by word. Claims Scripture states were kept with their verse. Claims it contradicts were dropped. Claims it doesn't address were kept only with support from the sources, and marked. `reference/people-report.json` lists each decision.
-- People a source inferred but the verses don't mention were removed, and duplicates were joined.
+- People a source inferred but the verses don't mention were removed, and duplicates were joined. BibleData's "Talitha" is Jairus's unnamed daughter, since Mark 5:41 translates the word as "little girl".
+- TIPNR files every "Israel" and "Judah" under the founder. Jacob, his twelve sons, Ephraim and Manasseh keep the verses of their own story, and elsewhere only those that name them as people.
+- A reign is given only to the king a verse says "became king", not to another king it dates by.
 - Sentences in TIPNR's summaries that gave someone a family the verses don't support were removed.
 - Calendar dates follow Theographic's chronology, with a lifespan corrected where a verse gives a different number of years.
 
