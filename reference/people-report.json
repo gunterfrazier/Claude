@@ -1704,6 +1704,11 @@
    "why": "Nergal-sar-ezer isn't the name in these verses"
   },
   {
+   "person": "Nero (Php.4.22-2Ti)",
+   "name": "Caesar",
+   "why": "Nero isn't the name in these verses"
+  },
+  {
    "person": "Philistine (Gen.10.14-1Ch)",
    "name": "Philistim",
    "why": "Philistine isn't the name in these verses"
@@ -1823,6 +1828,74 @@
    "person": "Manasseh",
    "kept": 16,
    "people_verses": 96
+  }
+ ],
+ "verse_fixes": [
+  {
+   "from": "Augustus",
+   "to": "",
+   "ref": "Luke 3:1",
+   "why": "Luke 3:1's Caesar is \"Tiberius Caesar\", who is listed there already"
+  },
+  {
+   "from": "Augustus",
+   "to": "",
+   "ref": "Acts 27:1",
+   "why": "Acts 27:1's \"Augustan cohort\" is the name of a unit, not a mention of the emperor"
+  },
+  {
+   "from": "Nero",
+   "to": "",
+   "ref": "2 Timothy 4:22",
+   "why": "Nero is named only in the traditional subscription after 2 Timothy, not in the letter"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 25:8",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 25:10",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 25:11",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 25:12",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 25:21",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 26:32",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 27:24",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
+  },
+  {
+   "from": "Claudius",
+   "to": "Nero",
+   "ref": "Acts 28:19",
+   "why": "Paul appeals to Caesar before Festus, and Josephus says Nero sent Festus to succeed Felix (Antiquities 20.8.9), after Claudius had died (20.8.1)"
   }
  ],
  "secondary_count": 261,

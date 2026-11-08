@@ -25,7 +25,7 @@ What was changed:
 
 - Records for the same person were matched across the four datasets.
 - Every family claim was tested against the Hebrew and Greek text, tagged word by word. Claims Scripture states were kept with their verse. Claims it contradicts were dropped. Claims it doesn't address were kept only with support from the sources, and marked. `reference/people-report.json` lists each decision.
-- People a source inferred but the verses don't mention were removed, and duplicates were joined. BibleData's "Talitha" is Jairus's unnamed daughter, since Mark 5:41 translates the word as "little girl".
+- People a source inferred but the verses don't mention were removed, and duplicates were joined. BibleData's "Talitha" is Jairus's unnamed daughter, since Mark 5:41 translates the word as "little girl". The "Caesar" of Paul's appeal in Acts 25–28 is Nero, not Claudius as TIPNR has it (Josephus, Antiquities 20.8.9, says Nero sent Festus), and Luke 3:1, Acts 27:1 and the subscription after 2 Timothy no longer count as mentions of Augustus or Nero.
 - TIPNR files every "Israel" and "Judah" under the founder. Jacob, his twelve sons, Ephraim and Manasseh keep the verses of their own story, and elsewhere only those that name them as people.
 - A reign is given only to the king a verse says "became king", not to another king it dates by.
 - Sentences in TIPNR's summaries that gave someone a family the verses don't support were removed.
